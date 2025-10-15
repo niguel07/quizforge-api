@@ -19,9 +19,11 @@ QuizForge API is a robust, scalable backend service built with FastAPI for manag
 ✅ **Question Filtering** - Filter by category, difficulty, or search by keyword  
 ✅ **Random Questions** - Generate random question sets for quizzes  
 ✅ **Answer Validation** - Validate learner answers with detailed feedback  
-✅ **Pagination Support** - Efficient handling of large datasets (10,000+ questions)  
+✅ **Analytics & Insights** - Comprehensive dataset statistics and aggregations  
+✅ **Performance Optimized** - Efficient aggregations for 10,000+ questions  
+✅ **Pagination Support** - Efficient handling of large datasets  
 ✅ **Type Safety** - Full Pydantic validation for data integrity  
-✅ **Testing Suite** - Comprehensive tests (41 tests) for all functionality  
+✅ **Testing Suite** - Comprehensive tests (76 tests) for all functionality  
 ✅ **CORS Support** - Cross-origin resource sharing enabled  
 
 ---
@@ -42,21 +44,25 @@ quizforge-api/
 │   ├── routes/
 │   │   ├── __init__.py
 │   │   ├── base.py             # Health & info routes
-│   │   └── questions.py        # Question endpoints
+│   │   ├── questions.py        # Question endpoints
+│   │   └── analytics.py        # Analytics endpoints
 │   ├── schemas/
 │   │   ├── __init__.py
 │   │   ├── question_schema.py  # Question models
-│   │   └── response_schema.py  # Response models
+│   │   ├── response_schema.py  # Response models
+│   │   └── analytics_schema.py # Analytics models
 │   └── utils/
 │       ├── __init__.py
 │       ├── file_manager.py     # File utilities
 │       ├── logger.py           # Logging configuration
 │       ├── randomizer.py       # Random sampling
-│       └── pagination.py       # Pagination utilities
+│       ├── pagination.py       # Pagination utilities
+│       └── analyzer.py         # Analytics aggregations
 ├── tests/
 │   ├── __init__.py
 │   ├── test_setup.py           # Setup tests
-│   └── test_questions.py       # Question endpoint tests
+│   ├── test_questions.py       # Question endpoint tests
+│   └── test_analytics.py       # Analytics endpoint tests
 ├── .env.example                # Environment template
 ├── .gitignore                  # Git ignore rules
 ├── requirements.txt            # Python dependencies
@@ -143,6 +149,19 @@ The API will be available at: **http://localhost:8000**
 | GET    | `/api/questions/difficulties`      | Get list of all difficulty levels              |
 | POST   | `/api/questions/answer`            | Validate answer and get feedback               |
 
+### Analytics Endpoints
+
+| Method | Endpoint                    | Description                                        |
+|--------|-----------------------------|----------------------------------------------------|
+| GET    | `/api/stats`                | Comprehensive dataset statistics                   |
+| GET    | `/api/categories`           | List of all unique categories                      |
+| GET    | `/api/difficulty`           | List of all difficulty levels                      |
+| GET    | `/api/topics`               | List of all unique topics                          |
+| GET    | `/api/count`                | Total question count                               |
+| GET    | `/api/summary`              | Compact summary of all metadata                    |
+| GET    | `/api/categories/stats`     | Detailed category statistics with percentages      |
+| GET    | `/api/difficulty/stats`     | Detailed difficulty statistics with percentages    |
+
 ### Documentation
 
 | Endpoint   | Description                    |
@@ -216,6 +235,59 @@ GET /api/questions/categories
 }
 ```
 
+#### 6. Get Analytics Statistics
+```bash
+GET /api/stats
+```
+```json
+{
+  "total_questions": 99,
+  "categories": {
+    "Colonial History": 15,
+    "African History": 12,
+    "Geography": 8
+  },
+  "difficulty": {
+    "Easy": 30,
+    "Medium": 45,
+    "Hard": 24
+  },
+  "topics": ["history", "geography", "science"],
+  "quality_stats": {
+    "min": 0.96,
+    "max": 1.0,
+    "average": 0.99
+  },
+  "unique_counts": {
+    "categories": 48,
+    "difficulties": 3,
+    "topics": 1
+  }
+}
+```
+
+#### 7. Get Detailed Category Stats
+```bash
+GET /api/categories/stats
+```
+```json
+{
+  "total_categories": 48,
+  "stats": [
+    {
+      "category": "Colonial History",
+      "count": 15,
+      "percentage": 15.15,
+      "difficulty_breakdown": {
+        "Easy": 5,
+        "Medium": 7,
+        "Hard": 3
+      }
+    }
+  ]
+}
+```
+
 ---
 
 ## 🧪 Testing
@@ -236,7 +308,7 @@ pytest tests/test_questions.py -v
 pytest --cov=src tests/
 ```
 
-**Test Coverage (41 Tests):**
+**Test Coverage (76 Tests):**
 - ✅ System endpoints (health, info, root)
 - ✅ Dataset loading and validation
 - ✅ Random question generation
@@ -245,7 +317,10 @@ pytest --cov=src tests/
 - ✅ Search functionality with filters
 - ✅ Answer validation (correct/incorrect)
 - ✅ Pagination
-- ✅ Error handling (404, 422, 400)
+- ✅ Analytics & statistics endpoints
+- ✅ Category and difficulty statistics
+- ✅ Data consistency across endpoints
+- ✅ Error handling (404, 422, 400, 503)
 - ✅ API documentation accessibility
 
 ---
@@ -359,10 +434,11 @@ Interactive documentation allows you to:
 
 ## 🔮 Future Enhancements
 
-Phase 3+ planned features:
+Phase 4+ planned features:
 - ✅ ~~Question filtering by category/difficulty~~ (Phase 2 Complete)
 - ✅ ~~Random question selection~~ (Phase 2 Complete)
 - ✅ ~~Answer validation~~ (Phase 2 Complete)
+- ✅ ~~Analytics & statistics~~ (Phase 3 Complete)
 - User authentication & authorization
 - Quiz session management
 - Score tracking & leaderboards
@@ -418,7 +494,7 @@ For questions or issues:
 
 **Version:** 1.0.0  
 **Last Updated:** October 2025  
-**Status:** Phase 2 - Core Endpoints Complete ✅
+**Status:** Phase 3 - Analytics & Insights Complete ✅
 
 ---
 
