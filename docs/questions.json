@@ -1,0 +1,1487 @@
+[
+  {
+    "question": "When was the German-Douala Treaty signed?",
+    "options": {
+      "A": "12 June 1884",
+      "B": "12 July 1884",
+      "C": "12 August 1884",
+      "D": "12 September 1884"
+    },
+    "answer": "B",
+    "category": "Colonial History",
+    "difficulty": "Easy",
+    "explanation": "The German-Douala Treaty (Traité germano-douala) was signed on July 12, 1884, marking the beginning of German colonial rule in Cameroon",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which explorer's journey is mentioned as occurring in the early 5th century?",
+    "options": {
+      "A": "Nechao",
+      "B": "Hanno",
+      "C": "Las Casas",
+      "D": "Othman-Dan-Fodio"
+    },
+    "answer": "B",
+    "category": "Ancient History",
+    "difficulty": "Medium",
+    "explanation": "The text mentions 'Le périple d'Hannon (début Ve siècle)' - Hanno's journey at the beginning of the 5th century",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was the time period of the ancient Kanem Empire?",
+    "options": {
+      "A": "500-1000",
+      "B": "600-1400",
+      "C": "700-1507",
+      "D": "800-1600"
+    },
+    "answer": "C",
+    "category": "Medieval History",
+    "difficulty": "Medium",
+    "explanation": "The text specifically mentions 'L'ancien Empire (700-1507)' for the Kanem Empire period",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which period marked the Portuguese presence on the Cameroonian coast?",
+    "options": {
+      "A": "1472-1578",
+      "B": "1500-1600",
+      "C": "1400-1500",
+      "D": "1578-1650"
+    },
+    "answer": "A",
+    "category": "Colonial History",
+    "difficulty": "Hard",
+    "explanation": "The text states 'La période portugaise (1472-1578)' as the period of Portuguese presence",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When did the First World War end in Cameroon?",
+    "options": {
+      "A": "November 11, 1918",
+      "B": "February 20, 1916",
+      "C": "August 1, 1914",
+      "D": "January 1, 1916"
+    },
+    "answer": "B",
+    "category": "Military History",
+    "difficulty": "Medium",
+    "explanation": "The war in Cameroon ended on February 20, 1916, as indicated by the dates in the text (1er août 1914-20 février 1916)",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When did the German colonial period in Cameroon end?",
+    "options": {
+      "A": "1914",
+      "B": "1916",
+      "C": "1919",
+      "D": "1945"
+    },
+    "answer": "B",
+    "category": "Colonial History",
+    "difficulty": "Medium",
+    "explanation": "The German colonial period in Cameroon ended on February 20, 1916, during World War I",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these Protestant missions was active in Cameroon?",
+    "options": {
+      "A": "Mission of Copenhagen",
+      "B": "Dutch Reformed Mission",
+      "C": "Basel Mission",
+      "D": "Swedish Lutheran Mission"
+    },
+    "answer": "C",
+    "category": "Religious History",
+    "difficulty": "Medium",
+    "explanation": "The Basel Mission was one of several Protestant missions that operated in Cameroon, as mentioned in the chapter about Protestant missions",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What international organization oversaw Cameroon after World War I?",
+    "options": {
+      "A": "United Nations",
+      "B": "League of Nations Mandate",
+      "C": "Organization of African Unity",
+      "D": "British Commonwealth"
+    },
+    "answer": "B",
+    "category": "Political History",
+    "difficulty": "Hard",
+    "explanation": "After WWI, Cameroon was placed under an international mandate system overseen by the League of Nations",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What period is known as 'The Race to Independence' in Cameroon's history?",
+    "options": {
+      "A": "1885-1905",
+      "B": "1919-1945",
+      "C": "1945-1960",
+      "D": "1960-1972"
+    },
+    "answer": "C",
+    "category": "Independence Movement",
+    "difficulty": "Easy",
+    "explanation": "The period from 1945 to 1960 is specifically referred to as 'La Course Vers L'Indépendance' (The Race to Independence)",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What event marked a significant change in colonial administration in 1945?",
+    "options": {
+      "A": "Brazzaville Conference",
+      "B": "Berlin Conference",
+      "C": "London Conference",
+      "D": "Paris Conference"
+    },
+    "answer": "A",
+    "category": "Colonial History",
+    "difficulty": "Hard",
+    "explanation": "The Brazzaville Conference marked the end of the 'Indigénat' system and brought significant changes to colonial administration",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What is described as a fundamental characteristic of African society according to the text?",
+    "options": {
+      "A": "Tribal isolation",
+      "B": "Participation",
+      "C": "Monarchy",
+      "D": "Warfare"
+    },
+    "answer": "B",
+    "category": "African History",
+    "difficulty": "Medium",
+    "explanation": "The text explicitly states that 'L'Afrique est héréditairement terre de Participation' (Africa is hereditarily a land of Participation)",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What challenge is mentioned regarding the writing of African languages?",
+    "options": {
+      "A": "Lack of written records",
+      "B": "Too many dialects",
+      "C": "Inconsistent phonetic rules",
+      "D": "Limited vocabulary"
+    },
+    "answer": "C",
+    "category": "Linguistics",
+    "difficulty": "Hard",
+    "explanation": "The text discusses how different regions use varying and often confusing phonetic rules, making it difficult to standardize written African languages",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which orthographic system was ultimately chosen for writing African names in the text?",
+    "options": {
+      "A": "International phonetic alphabet",
+      "B": "French orthography",
+      "C": "Anglo-Saxon rules",
+      "D": "German system"
+    },
+    "answer": "B",
+    "category": "Colonial History",
+    "difficulty": "Easy",
+    "explanation": "The author chose French orthography as it was the system all Cameroonians learned in school",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What historical topics does the author insist on addressing openly?",
+    "options": {
+      "A": "Only pre-colonial history",
+      "B": "Only modern developments",
+      "C": "Only successful events",
+      "D": "Both slave trade and colonization"
+    },
+    "answer": "D",
+    "category": "African History",
+    "difficulty": "Medium",
+    "explanation": "The text mentions addressing both 'la traite' (slave trade) and colonization without hiding anything",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where was the author teaching while developing these historical insights?",
+    "options": {
+      "A": "Collège Libermann",
+      "B": "University of Cameroon",
+      "C": "Mokolo Institute",
+      "D": "Gabon Academy"
+    },
+    "answer": "A",
+    "category": "Educational History",
+    "difficulty": "Easy",
+    "explanation": "The text mentions that the author taught at Collège Libermann in Douala",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, approximately how long ago did Lake Chad extend 700km northeast of its current location?",
+    "options": {
+      "A": "50,000 years ago",
+      "B": "100,000 years ago",
+      "C": "200,000 years ago",
+      "D": "500,000 years ago"
+    },
+    "answer": "C",
+    "category": "African Geography",
+    "difficulty": "Medium",
+    "explanation": "The text specifically mentions that Lake Chad extended 700km northeast of its current location approximately 200,000 years ago",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these islands is mentioned in the text as being part of the chain between Africa and South America?",
+    "options": {
+      "A": "Madagascar",
+      "B": "Cape Verde",
+      "C": "Fernando-Pô",
+      "D": "Mauritius"
+    },
+    "answer": "C",
+    "category": "Geography",
+    "difficulty": "Easy",
+    "explanation": "Fernando-Pô is specifically listed among the chain of islands mentioned in the text",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which historical kingdoms are mentioned as having formed around Lake Chad?",
+    "options": {
+      "A": "Mali and Songhai",
+      "B": "Kanem and Bornou",
+      "C": "Ghana and Benin",
+      "D": "Zimbabwe and Kongo"
+    },
+    "answer": "B",
+    "category": "African History",
+    "difficulty": "Medium",
+    "explanation": "The text mentions Kanem and Bornou among the kingdoms that formed around Lake Chad",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where is the Musée ethnologique mentioned in the text located?",
+    "options": {
+      "A": "Paris",
+      "B": "Douala",
+      "C": "Tervuren",
+      "D": "Yaoundé"
+    },
+    "answer": "C",
+    "category": "Museums",
+    "difficulty": "Hard",
+    "explanation": "The text mentions the Musée ethnologique as being located in Tervuren, Belgium",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which animals are NOT mentioned as having lived in the Lake Chad region?",
+    "options": {
+      "A": "Elephants",
+      "B": "Lions",
+      "C": "Crocodiles",
+      "D": "Rhinoceros"
+    },
+    "answer": "B",
+    "category": "Natural History",
+    "difficulty": "Easy",
+    "explanation": "While several animals are listed as having lived in the Lake Chad region, lions are not mentioned in the text",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ancient inland sea was located 700km northeast of its current position around 200,000 years ago?",
+    "options": {
+      "A": "Lake Victoria",
+      "B": "Lake Chad",
+      "C": "Lake Tanganyika",
+      "D": "Lake Nyasa"
+    },
+    "answer": "B",
+    "category": "Ancient Geography",
+    "difficulty": "Medium",
+    "explanation": "According to the text, Lake Chad (Tchad) was located 700km northeast of its current position about 200,000 years ago, surrounded by dense vegetation and wildlife.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these islands is mentioned as part of the chain of islands in the text?",
+    "options": {
+      "A": "Madagascar",
+      "B": "Cape Verde",
+      "C": "Fernando-Pô",
+      "D": "Mauritius"
+    },
+    "answer": "C",
+    "category": "Geography",
+    "difficulty": "Easy",
+    "explanation": "Fernando-Pô is specifically mentioned in the text as one of the scattered island chain, along with San-Tomé, Annobon, and Sainte-Hélène.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ancient kingdoms developed around Lake Chad?",
+    "options": {
+      "A": "Mali and Songhai",
+      "B": "Zimbabwe and Mutapa",
+      "C": "Kanem and Bornou",
+      "D": "Ashanti and Dahomey"
+    },
+    "answer": "C",
+    "category": "African History",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that Kanem and Bornou were among the kingdoms that developed around Lake Chad, along with Mandara and Adamaoua.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What major ethnic groups are mentioned as present in Cameroon?",
+    "options": {
+      "A": "Bantu, Sudanese, Semito-Hamites",
+      "B": "Zulu, Xhosa, Swazi",
+      "C": "Yoruba, Igbo, Hausa",
+      "D": "Maasai, Kikuyu, Luo"
+    },
+    "answer": "A",
+    "category": "Ethnography",
+    "difficulty": "Hard",
+    "explanation": "The text specifically mentions that Cameroon encompasses Bantu, Sudanese, and Semito-Hamites among its ethnic groups.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ocean current creates a vortex near Douala?",
+    "options": {
+      "A": "Benguela Current",
+      "B": "Guinea Current",
+      "C": "Canary Current",
+      "D": "Agulhas Current"
+    },
+    "answer": "B",
+    "category": "Maritime History",
+    "difficulty": "Hard",
+    "explanation": "The text states that the Guinea Current creates a vortex near Douala, between the Canary Current and the Benguela Current.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What is considered the most irreplaceable historical document according to the text?",
+    "options": {
+      "A": "Written records",
+      "B": "Oral traditions",
+      "C": "Human beings themselves",
+      "D": "Archaeological artifacts"
+    },
+    "answer": "C",
+    "category": "Historical Sources",
+    "difficulty": "Medium",
+    "explanation": "The text specifically states that 'the most irreplaceable, the most precious document is still man himself, whose presence transforms duration into history.'",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ethnic groups does the text mention as being present in Cameroon?",
+    "options": {
+      "A": "Bantou and Pygmies only",
+      "B": "Bantou, Soudanais, and Arabs",
+      "C": "Bantou, Soudanais, Sémito-Hamites, and Pygmies",
+      "D": "Soudanais and Pygmies only"
+    },
+    "answer": "C",
+    "category": "African Ethnography",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that Cameroon includes Bantou, Soudanais, Sémito-Hamites, and notes that Pygmees continue to coexist peacefully with their neighbors.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What is described as the primary mode of transmitting knowledge in African civilization?",
+    "options": {
+      "A": "Written documents",
+      "B": "Visual arts",
+      "C": "Oral transmission",
+      "D": "Archaeological artifacts"
+    },
+    "answer": "C",
+    "category": "African History",
+    "difficulty": "Easy",
+    "explanation": "The text states that in African civilization, transmission of thought occurs more through hearing than through sight, making oral documentation particularly valuable.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What geographical features characterize the region north of the tenth degree latitude in Cameroon?",
+    "options": {
+      "A": "Dense forest",
+      "B": "Savanna",
+      "C": "Steppe and desert",
+      "D": "Coastal plains"
+    },
+    "answer": "C",
+    "category": "African Geography",
+    "difficulty": "Hard",
+    "explanation": "The text indicates that beyond the tenth degree of latitude, the steppe announces the desert ('au-delà, la steppe annonce le désert').",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, when did the first humans appear on Earth?",
+    "options": {
+      "A": "Over 600,000 years ago",
+      "B": "1 million years ago",
+      "C": "100,000 years ago",
+      "D": "250,000 years ago"
+    },
+    "answer": "A",
+    "category": "Prehistoric History",
+    "difficulty": "Easy",
+    "explanation": "The text explicitly states that the first humans appeared during the Quaternary period, more than 600,000 years ago",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When was the first Australopithecus fossil discovered at Taung?",
+    "options": {
+      "A": "1913",
+      "B": "1921",
+      "C": "1924",
+      "D": "1935"
+    },
+    "answer": "C",
+    "category": "Archaeological Discoveries",
+    "difficulty": "Medium",
+    "explanation": "The text states that the first Australopithecus fossil was discovered at Taung in 1924 and described by R.A. Dart in Nature magazine the following year",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these methods is used to date ancient artifacts more precisely?",
+    "options": {
+      "A": "Geological layering",
+      "B": "Carbon-14 dating with Geiger counter",
+      "C": "Ostological analysis",
+      "D": "Chronological concordance"
+    },
+    "answer": "B",
+    "category": "Archaeological Methods",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that radioactive methods using a Geiger counter to detect Carbon-14 provide more precise dating of ancient materials",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What are the three ages of the Quaternary period?",
+    "options": {
+      "A": "Bronze, Iron, Stone",
+      "B": "Ancient, Middle, Modern",
+      "C": "Paleolithic, Mesolithic, Neolithic",
+      "D": "Paleolithic, Neolithic, Metal Age"
+    },
+    "answer": "D",
+    "category": "Prehistoric Periods",
+    "difficulty": "Hard",
+    "explanation": "The text divides the Quaternary period into three ages: Paleolithic (carved stone), Neolithic (polished stone), and Metal Age (bronze, copper, iron)",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where was the Africanthropus fossil discovered?",
+    "options": {
+      "A": "Lake Eyassi",
+      "B": "Lake Njara",
+      "C": "Transvaal",
+      "D": "Broken-Hill"
+    },
+    "answer": "B",
+    "category": "Fossil Discoveries",
+    "difficulty": "Hard",
+    "explanation": "According to the text, the Africanthropus was discovered by Kohl Larsen in 1935 on the shores of Lake Njara",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When was the Broken-Hill skull discovered?",
+    "options": {
+      "A": "1913",
+      "B": "1921",
+      "C": "1927",
+      "D": "1935"
+    },
+    "answer": "B",
+    "category": "Archaeological Discoveries",
+    "difficulty": "Easy",
+    "explanation": "The Broken-Hill skull was discovered in 1921 in Rhodesia and was named Homo Rhodesiensis by Pycraft.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Who discovered the Africananthrope?",
+    "options": {
+      "A": "Leakey",
+      "B": "Pycraft",
+      "C": "Kohl Larsen",
+      "D": "Beck"
+    },
+    "answer": "C",
+    "category": "Archaeological Discoveries",
+    "difficulty": "Medium",
+    "explanation": "The Africananthrope was discovered in 1935 by Kohl Larsen near Lake Njara.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which location is known for its famous paleolithic sites in the 'Great Rift Valley'?",
+    "options": {
+      "A": "Nigeria",
+      "B": "Ghana",
+      "C": "Tanganyika",
+      "D": "Congo"
+    },
+    "answer": "C",
+    "category": "Prehistoric Sites",
+    "difficulty": "Medium",
+    "explanation": "The sites of the 'Great Rift Valley', including Oldoway gorges, covered Tanganyika and part of modern Kenya.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When was the Third Pan-African Congress of Prehistory held in Livingstone?",
+    "options": {
+      "A": "July 22-28, 1951",
+      "B": "July 22-28, 1952",
+      "C": "July 22-28, 1953",
+      "D": "July 22-28, 1954"
+    },
+    "answer": "C",
+    "category": "Historical Events",
+    "difficulty": "Hard",
+    "explanation": "The Third Pan-African Congress of Prehistory was held in Livingstone from July 22-28, 1953, where Professor Henri Vallois made his declaration about human origins.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these scholars worked on archaeological sites in 1927-28?",
+    "options": {
+      "A": "Beck",
+      "B": "Leakey",
+      "C": "Peers",
+      "D": "Breuil"
+    },
+    "answer": "B",
+    "category": "Archaeological Research",
+    "difficulty": "Medium",
+    "explanation": "Leakey conducted archaeological work in 1927-28, exploring several important sites in the Great Lakes region.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to Vallois and Professor Leakey, where did the first humans likely originate?",
+    "options": {
+      "A": "Europe",
+      "B": "Africa",
+      "C": "Asia",
+      "D": "Australia"
+    },
+    "answer": "B",
+    "category": "Human Origins",
+    "difficulty": "Easy",
+    "explanation": "Vallois, in the presence of Professor Leakey, declared that the first humans likely came from Africa.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was Dr. M.D. Jeffreys' theory about early humans' skin color?",
+    "options": {
+      "A": "They were all light-skinned",
+      "B": "They had varying skin tones",
+      "C": "They were dark-skinned for survival",
+      "D": "Skin color was not significant"
+    },
+    "answer": "C",
+    "category": "Early Human Evolution",
+    "difficulty": "Medium",
+    "explanation": "Dr. Jeffreys stated that early humans must have had dark skin to survive in Central Africa, and white-skinned primitive humans would have perished.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How old are the oldest paleolithic tools found in Yaoundé, Cameroon estimated to be?",
+    "options": {
+      "A": "150,000 years",
+      "B": "300,000 years",
+      "C": "450,000 years",
+      "D": "600,000 years"
+    },
+    "answer": "D",
+    "category": "Archaeology",
+    "difficulty": "Hard",
+    "explanation": "The stone tools found in Yaoundé date back approximately 600,000 years, corresponding to the Chelleen period in Europe and Oldowan in Africa.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where are many of Cameroon's prehistoric artifacts currently housed?",
+    "options": {
+      "A": "Museum of Man in Paris",
+      "B": "IRCAM Museum in Douala",
+      "C": "British Museum",
+      "D": "National Museum of Yaoundé"
+    },
+    "answer": "B",
+    "category": "Archaeological Collections",
+    "difficulty": "Medium",
+    "explanation": "A significant portion of Cameroon's prehistoric artifacts are housed at the Museum of the Institute of Scientific Research of Cameroon (IRCAM) in Douala.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How many paleolithic sites containing stone tools have been identified in Cameroon according to IRCAM's map?",
+    "options": {
+      "A": "Six",
+      "B": "Seven",
+      "C": "Eight",
+      "D": "Nine"
+    },
+    "answer": "C",
+    "category": "Archaeological Sites",
+    "difficulty": "Medium",
+    "explanation": "According to the paleolithic map at the IRCAM museum in Douala, eight sites containing stone tools have been identified in Cameroon.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What is the approximate time period of the Paleolithic era in Cameroon?",
+    "options": {
+      "A": "50,000 to 10,000 years ago",
+      "B": "600,000 to 50,000 years ago",
+      "C": "1 million to 600,000 years ago",
+      "D": "100,000 to 25,000 years ago"
+    },
+    "answer": "B",
+    "category": "African Prehistory",
+    "difficulty": "Easy",
+    "explanation": "According to the text, the Paleolithic period in Cameroon lasted from 600,000 to 50,000 years ago.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these Neolithic sites was NOT mentioned in the text as being located in Cameroon?",
+    "options": {
+      "A": "Maroua",
+      "B": "Yaoundé",
+      "C": "Bamenda",
+      "D": "Kribi"
+    },
+    "answer": "C",
+    "category": "Archaeological Sites",
+    "difficulty": "Medium",
+    "explanation": "While Maroua, Yaoundé, and Kribi were mentioned as Neolithic sites, Bamenda was not listed among the sites in the text.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Who was credited as the great initiator of African rock art studies at the beginning of the 20th century?",
+    "options": {
+      "A": "R.P. Carret",
+      "B": "Leo Frobénius",
+      "C": "Baumann",
+      "D": "Westermann"
+    },
+    "answer": "B",
+    "category": "Archaeological History",
+    "difficulty": "Medium",
+    "explanation": "The text specifically mentions Leo Frobénius as the great initiator in this field at the beginning of the century.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What type of prehistoric art was found in the Cameroon region?",
+    "options": {
+      "A": "Cave paintings",
+      "B": "Rock engravings",
+      "C": "Wood carvings",
+      "D": "Pottery designs"
+    },
+    "answer": "B",
+    "category": "Prehistoric Art",
+    "difficulty": "Easy",
+    "explanation": "The text specifically mentions that Cameroon revealed rock engravings (gravures rupestres) rather than paintings, particularly at Bidzar and in the Tinguelin cliffs.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, approximately how many Pygmies were estimated to live in Cameroon?",
+    "options": {
+      "A": "3,500",
+      "B": "6,500",
+      "C": "9,500",
+      "D": "12,500"
+    },
+    "answer": "B",
+    "category": "African Demographics",
+    "difficulty": "Easy",
+    "explanation": "The text explicitly states that according to official estimates, Cameroon had approximately 6,500 Pygmies scattered throughout the forest zone.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was the typical height range of Pygmy people according to the text?",
+    "options": {
+      "A": "1.30m to 1.50m",
+      "B": "1.40m to 1.60m",
+      "C": "1.50m to 1.70m",
+      "D": "1.20m to 1.40m"
+    },
+    "answer": "A",
+    "category": "Anthropology",
+    "difficulty": "Easy",
+    "explanation": "The text specifically mentions that Pygmies were of small stature, measuring between 1.30 to 1.50 meters in height.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Who was considered the best 'pygmologist' of the century according to the text?",
+    "options": {
+      "A": "Father de Ternay",
+      "B": "Dr. Poutrin",
+      "C": "Father Trilles",
+      "D": "Father Schebesta"
+    },
+    "answer": "D",
+    "category": "Anthropological Research",
+    "difficulty": "Medium",
+    "explanation": "The text explicitly states that Father Schebesta earned the title of the best pygmologist of the century.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which period marks the Arab-Berber and modern group in Mauny's rock art classification?",
+    "options": {
+      "A": "200 BCE - 700 CE",
+      "B": "1200 BCE - 0 CE",
+      "C": "700 CE - present day",
+      "D": "2500 - 1000 BCE"
+    },
+    "answer": "C",
+    "category": "Archaeological Dating",
+    "difficulty": "Hard",
+    "explanation": "According to Mauny's classification, the Arab-Berber and modern group (Group 5) dates from 700 CE to the present day.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to ancient Egyptian records, what did Hirkhouf bring to Pharaoh Pepi II around 2000 BC?",
+    "options": {
+      "A": "Gold and precious stones",
+      "B": "A Pygmy dancer",
+      "C": "Sacred scrolls",
+      "D": "Exotic animals"
+    },
+    "answer": "B",
+    "category": "Ancient Egypt",
+    "difficulty": "Medium",
+    "explanation": "Hirkhouf brought a Pygmy to entertain Pharaoh Pepi II with dances, which earned him the Pharaoh's favor",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How did Homer depict the Pygmies in the Iliade?",
+    "options": {
+      "A": "As peaceful farmers",
+      "B": "As fierce warriors",
+      "C": "As crane hunters",
+      "D": "As skilled craftsmen"
+    },
+    "answer": "C",
+    "category": "Ancient Literature",
+    "difficulty": "Medium",
+    "explanation": "In the Iliade, Homer portrayed Pygmies as hunters of cranes, engaging in battles with these birds in Africa",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where did scientists trace the presence of Pygmy peoples?",
+    "options": {
+      "A": "Only in Central Africa",
+      "B": "In Europe and Africa",
+      "C": "In India and Southwest Asian islands",
+      "D": "In the Americas"
+    },
+    "answer": "C",
+    "category": "Anthropology",
+    "difficulty": "Hard",
+    "explanation": "Scientists traced Pygmy peoples' presence from Africa to India and into the islands of Southwest Asia",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How long did Hirkhouf's journeys to the South typically last?",
+    "options": {
+      "A": "2-3 months",
+      "B": "4-5 months",
+      "C": "7-8 months",
+      "D": "12 months"
+    },
+    "answer": "C",
+    "category": "Ancient Exploration",
+    "difficulty": "Easy",
+    "explanation": "According to the text, Hirkhouf's voyages towards the South lasted seven to eight months",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where can the artistic depiction of Pygmies be found in ancient Greek art?",
+    "options": {
+      "A": "The Francois Vase",
+      "B": "The Parthenon",
+      "C": "The Delphi Oracle",
+      "D": "The Acropolis"
+    },
+    "answer": "A",
+    "category": "Ancient Art",
+    "difficulty": "Hard",
+    "explanation": "The text mentions that Pygmies are depicted on the famous Francois Vase, a significant piece of Greek ceramic art",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to ancient sources, which emperor sent Nonnosus to meet with the king of Ethiopia?",
+    "options": {
+      "A": "Augustus",
+      "B": "Justin",
+      "C": "Constantine",
+      "D": "Theodosius"
+    },
+    "answer": "B",
+    "category": "Ancient History",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that Emperor Justin sent Nonnosus to meet with the king of Ethiopia, where he claimed to have found Pygmies on an island near the Ethiopian coast.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What is the name of the supreme god according to the Pygmies of Ituri?",
+    "options": {
+      "A": "Kmvoum",
+      "B": "Tora",
+      "C": "Tore",
+      "D": "Asiga"
+    },
+    "answer": "C",
+    "category": "Religious History",
+    "difficulty": "Medium",
+    "explanation": "The text specifically states that the Ituri Pygmies call their supreme god 'Tore', while other groups use different names.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which historical artifact features depictions of Pygmies?",
+    "options": {
+      "A": "The François Vase",
+      "B": "The Parthenon Frieze",
+      "C": "The Rosetta Stone",
+      "D": "The Bayeux Tapestry"
+    },
+    "answer": "A",
+    "category": "Art History",
+    "difficulty": "Hard",
+    "explanation": "The text mentions that Pygmies are depicted on the famous François Vase, which is an example of Greek ceramic art.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was a significant milestone for Pygmy education in the Kribi region?",
+    "options": {
+      "A": "Opening of first Pygmy school",
+      "B": "First university graduate",
+      "C": "First primary education certificate",
+      "D": "First Pygmy teacher"
+    },
+    "answer": "C",
+    "category": "Modern History",
+    "difficulty": "Easy",
+    "explanation": "The text mentions that about ten years prior, the first Pygmy obtained their primary education certificate in the Kribi region.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which location is mentioned as a former Pygmy dwelling site?",
+    "options": {
+      "A": "Akok-Békoé",
+      "B": "Kribi",
+      "C": "Ituri",
+      "D": "Gabon"
+    },
+    "answer": "A",
+    "category": "Historical Geography",
+    "difficulty": "Medium",
+    "explanation": "The text mentions Akok-Békoé, near the Akono Catholic Mission, as a site of caves that were formerly occupied by Pygmies.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, what did the Pygmies make from Ngomba-Asiga's head after killing him?",
+    "options": {
+      "A": "A drinking vessel",
+      "B": "A sphere for playing games",
+      "C": "A ceremonial mask",
+      "D": "A musical instrument"
+    },
+    "answer": "B",
+    "category": "African Folklore",
+    "difficulty": "Easy",
+    "explanation": "The text specifically states that from his head, the Pygmies made a sphere for the game of spears (une sphère pour le jeu de la sagaie).",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What name do the Bassa and Bakoko people use for the Pygmies?",
+    "options": {
+      "A": "Bekoé",
+      "B": "Bako",
+      "C": "Esunga-Mute",
+      "D": "Gissima"
+    },
+    "answer": "B",
+    "category": "African Ethnography",
+    "difficulty": "Medium",
+    "explanation": "The text lists different names for Pygmies in various dialects, and specifically mentions that the Bassa and Bakoko call them 'Bako'.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was the cause of the initial conflict between Ngomba-Asiga and the Pygmies?",
+    "options": {
+      "A": "A territorial dispute",
+      "B": "The Ezeng tree's fruits",
+      "C": "A stolen musical instrument",
+      "D": "A hunting disagreement"
+    },
+    "answer": "B",
+    "category": "African Folklore",
+    "difficulty": "Easy",
+    "explanation": "The conflict began when Ngomba-Asiga was caught eating fruits from the Ezeng tree, which the Pygmies claimed as their own.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What name do the Douala people use for the Pygmies?",
+    "options": {
+      "A": "Ngyel",
+      "B": "Kamen",
+      "C": "Esunga-Mute",
+      "D": "Badjel"
+    },
+    "answer": "C",
+    "category": "African Ethnography",
+    "difficulty": "Hard",
+    "explanation": "According to the linguistic note at the end of the text, the Douala people refer to Pygmies as 'Esunga-Mute', which means 'dwarf' or 'nain' in French.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was the approximate height of Mount Cameroon's peak (Fako) according to recent studies?",
+    "options": {
+      "A": "3,050 meters",
+      "B": "4,070 meters",
+      "C": "4,500 meters",
+      "D": "3,400 meters"
+    },
+    "answer": "B",
+    "category": "Geography/History",
+    "difficulty": "Easy",
+    "explanation": "According to the text, recent studies indicate that Mount Cameroon reaches a height of 4,070 meters at its peak, Fako.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which of these volcanic eruptions of Mount Cameroon caused the German Government to relocate from Buea to Douala?",
+    "options": {
+      "A": "1868 eruption",
+      "B": "1909 eruption",
+      "C": "1922 eruption",
+      "D": "1954 eruption"
+    },
+    "answer": "B",
+    "category": "Colonial History",
+    "difficulty": "Medium",
+    "explanation": "The text states that following the April 26, 1909 eruption, the German Government moved from Buea to Douala.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What were the two historical focal points of Cameroon's history mentioned in the text?",
+    "options": {
+      "A": "Mount Cameroon and the Atlantic Ocean",
+      "B": "Lake Chad and the Sahara Desert",
+      "C": "Mount Cameroon and Lake Chad",
+      "D": "The Gulf of Guinea and the Mandara Mountains"
+    },
+    "answer": "C",
+    "category": "Ancient History",
+    "difficulty": "Medium",
+    "explanation": "The text identifies Mount Cameroon on the coast and Lake Chad in the North as the two historical focal points of Cameroon's history since antiquity.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When did the first recorded historical activities begin in Cameroon according to the text?",
+    "options": {
+      "A": "2nd Millennium BCE",
+      "B": "1st Millennium BCE",
+      "C": "1st Millennium CE",
+      "D": "3rd Millennium BCE"
+    },
+    "answer": "B",
+    "category": "Ancient History",
+    "difficulty": "Hard",
+    "explanation": "The text mentions that in the first millennium BCE, sailors from Egypt and Carthage began the recorded history of Cameroon.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How frequently did Mount Cameroon's volcanic eruptions occur according to historical observations?",
+    "options": {
+      "A": "Every 5 years",
+      "B": "Every 10 years",
+      "C": "Every 15 years",
+      "D": "Every 20 years"
+    },
+    "answer": "C",
+    "category": "Natural History",
+    "difficulty": "Medium",
+    "explanation": "According to the text, the periodic return of volcanic eruptions occurred approximately every 15 years.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which historical event caused the German Government to relocate from Buéa to Douala?",
+    "options": {
+      "A": "A military invasion",
+      "B": "A volcanic eruption",
+      "C": "A flood",
+      "D": "A political uprising"
+    },
+    "answer": "B",
+    "category": "Colonial History",
+    "difficulty": "Easy",
+    "explanation": "According to the text, the German Government relocated following a volcanic eruption in 1922",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Who is credited with the first historically documented circumnavigation of Africa?",
+    "options": {
+      "A": "Hanno the Navigator",
+      "B": "Néchao II",
+      "C": "Psammétik",
+      "D": "Carthaginian sailors"
+    },
+    "answer": "B",
+    "category": "Ancient History",
+    "difficulty": "Medium",
+    "explanation": "The text states that Néchao II, second king of the 26th Dynasty, completed the first historically known circumnavigation of Africa",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was the ancient name for Mount Cameroon?",
+    "options": {
+      "A": "Mondungo-Ma-Loba",
+      "B": "Char des Dieux",
+      "C": "Mont Fako",
+      "D": "Sinaï d'Afrique"
+    },
+    "answer": "B",
+    "category": "Historical Geography",
+    "difficulty": "Hard",
+    "explanation": "The text mentions that Mount Cameroon was known as 'Char des Dieux' (Chariot of the Gods) in ancient times",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When did the 1922 volcanic eruption near Debunscha and Bibundi end?",
+    "options": {
+      "A": "February 2, 1922",
+      "B": "February 3, 1922",
+      "C": "August 24, 1922",
+      "D": "December 31, 1922"
+    },
+    "answer": "C",
+    "category": "Natural History",
+    "difficulty": "Medium",
+    "explanation": "The text states that the eruption which began on February 3, 1922, lasted until August 24 of the same year",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which archaeological evidence is mentioned from the Ennedi region of Chad?",
+    "options": {
+      "A": "Ancient pottery",
+      "B": "Rock paintings",
+      "C": "Metal tools",
+      "D": "Burial sites"
+    },
+    "answer": "B",
+    "category": "Archaeology",
+    "difficulty": "Easy",
+    "explanation": "The text mentions rock paintings (peintures rupestres) at Gotebebé in the Ennedi region of Chad",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When was the Phoenician colony of Lixus founded?",
+    "options": {
+      "A": "814 BCE",
+      "B": "1150 BCE",
+      "C": "492 BCE",
+      "D": "500 BCE"
+    },
+    "answer": "B",
+    "category": "Ancient Settlements",
+    "difficulty": "Easy",
+    "explanation": "Lixus was founded around 1150 BCE in what is now northern Morocco, predating the foundation of Carthage (814 BCE).",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How many ships and people were involved in Hanno's expedition?",
+    "options": {
+      "A": "30 ships with 15,000 people",
+      "B": "40 ships with 20,000 people",
+      "C": "50 ships with 25,000 people",
+      "D": "60 ships with 30,000 people"
+    },
+    "answer": "D",
+    "category": "Ancient Exploration",
+    "difficulty": "Medium",
+    "explanation": "Hanno's expedition comprised 60 ships of 50 oars each, carrying a total of 30,000 people including both men and women.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ancient navigator wrote a coastal survey of the Indian Ocean for Darius?",
+    "options": {
+      "A": "Eudoxe",
+      "B": "Hanno",
+      "C": "Scylax of Caryanda",
+      "D": "Heraclitus"
+    },
+    "answer": "C",
+    "category": "Ancient Geography",
+    "difficulty": "Hard",
+    "explanation": "Scylax of Caryanda, who lived in the 5th century BCE, wrote a coastal survey of the Indian Ocean for Darius, who had made him a general in his armies.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Where was the original text of Hanno's voyage preserved?",
+    "options": {
+      "A": "Temple of Melkhart in Carthage",
+      "B": "Library of Alexandria",
+      "C": "Palace of Syracuse",
+      "D": "Archives of Rome"
+    },
+    "answer": "A",
+    "category": "Ancient Documents",
+    "difficulty": "Hard",
+    "explanation": "The original Punic text of Hanno's voyage was preserved in the Temple of Melkhart in Carthage, though we only have access to a Greek summary today.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Who led a famous voyage along the African coast in the early 5th century BCE?",
+    "options": {
+      "A": "Gelon of Syracuse",
+      "B": "Hanno",
+      "C": "Sataspès",
+      "D": "Agathodemon"
+    },
+    "answer": "B",
+    "category": "Ancient Exploration",
+    "difficulty": "Easy",
+    "explanation": "Hanno's voyage (periplus) is documented in a Greek text summarizing a Punic document from the temple of Melkhart in Carthage",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "How many people were reportedly part of Hanno's expedition?",
+    "options": {
+      "A": "15,000",
+      "B": "20,000",
+      "C": "30,000",
+      "D": "40,000"
+    },
+    "answer": "C",
+    "category": "Ancient Maritime History",
+    "difficulty": "Medium",
+    "explanation": "The expedition included 60 ships with 50 oars each, carrying a total of 30,000 people, including both men and women",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ancient historian preserved a Persian account of an African voyage by Sataspès?",
+    "options": {
+      "A": "Pliny the Elder",
+      "B": "Pomponius Mela",
+      "C": "Herodotus",
+      "D": "Ptolemy"
+    },
+    "answer": "C",
+    "category": "Ancient Historians",
+    "difficulty": "Hard",
+    "explanation": "Herodotus recorded the Persian account of Sataspès's voyage in his Histories (Book IV, 43)",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ancient manuscript containing maps is housed in the French National Library?",
+    "options": {
+      "A": "The Peutinger Table",
+      "B": "Pseudo-Ptolemy by Agathodemon",
+      "C": "Eratosthenes' Atlas",
+      "D": "Strabo's Maps"
+    },
+    "answer": "B",
+    "category": "Ancient Cartography",
+    "difficulty": "Hard",
+    "explanation": "The Pseudo-Ptolemy maps by Agathodemon are preserved in the French National Library under reference Grec 1401",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, when did the Carthaginian Hanno lead his expedition that mentioned the Chariot of the Gods?",
+    "options": {
+      "A": "Around 300 BCE",
+      "B": "Around 500 BCE",
+      "C": "Around 100 BCE",
+      "D": "Around 700 BCE"
+    },
+    "answer": "B",
+    "category": "Ancient Exploration",
+    "difficulty": "Medium",
+    "explanation": "The text explicitly states that Hanno's expedition took place around 500 BCE ('vers 500 avant J.-C.') when he documented the Chariot of the Gods volcano.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which ancient document is mentioned as being housed in the French National Library?",
+    "options": {
+      "A": "The original Ptolemy atlas",
+      "B": "The Peutinger Table",
+      "C": "Pseudo-Ptolemy by Agathodemon",
+      "D": "Strabo's maps"
+    },
+    "answer": "C",
+    "category": "Ancient Documents",
+    "difficulty": "Hard",
+    "explanation": "The text mentions that the Pseudo-Ptolemy work by Agathodemon is located in the French National Library (Grec 1401).",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What modern-day geographical feature is identified as the ancient 'Chariot of the Gods'?",
+    "options": {
+      "A": "Mount Cameroon",
+      "B": "Mount Kilimanjaro",
+      "C": "Atlas Mountains",
+      "D": "Mount Kenya"
+    },
+    "answer": "A",
+    "category": "Historical Geography",
+    "difficulty": "Easy",
+    "explanation": "The text clearly identifies the ancient Chariot of the Gods (Théôn Ochéma) as the modern-day Mount Cameroon.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "When was the Peutinger Table created?",
+    "options": {
+      "A": "2nd century BCE",
+      "B": "1st century CE",
+      "C": "3rd century CE",
+      "D": "4th century CE"
+    },
+    "answer": "D",
+    "category": "Ancient Cartography",
+    "difficulty": "Medium",
+    "explanation": "The text specifically states that the Peutinger Table dates from the 4th century CE ('elle est du IVe siècle après J.-C.').",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, who led an expedition around 500 BC that documented the 'Char des Dieux' (Chariot of the Gods)?",
+    "options": {
+      "A": "Ramsès II",
+      "B": "Hanno the Carthaginian",
+      "C": "Herodotus",
+      "D": "Diodore of Sicily"
+    },
+    "answer": "B",
+    "category": "Ancient Exploration",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that Hanno the Carthaginian led an expedition around 500 BC and left a written document called 'The Periplus of Hanno' which mentioned the Char des Dieux (Mount Cameroon).",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What geographical feature gave Cameroon its name?",
+    "options": {
+      "A": "Mount Cameroon",
+      "B": "Rio Camerôes",
+      "C": "The Chad Plains",
+      "D": "Cross-River"
+    },
+    "answer": "B",
+    "category": "Historical Geography",
+    "difficulty": "Easy",
+    "explanation": "The text states that Rio Camerôes (river of shrimps) gave its name to the country Cameroon about 2000 years after the first historical records.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to Strabon's description, what was NOT part of the African diet he observed?",
+    "options": {
+      "A": "Millet",
+      "B": "Cheese",
+      "C": "Rice",
+      "D": "Lotus"
+    },
+    "answer": "C",
+    "category": "Ancient African Culture",
+    "difficulty": "Medium",
+    "explanation": "Strabon mentioned millet, orge (barley), lotus, meat, milk, cheese, and various plants, but did not mention rice in his description of their diet.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "What physical feature was commonly found on people from Nigeria to the Nile Valley?",
+    "options": {
+      "A": "Tattoos and ritual scarification",
+      "B": "Painted faces",
+      "C": "Gold jewelry",
+      "D": "Elaborate hairstyles"
+    },
+    "answer": "A",
+    "category": "Ancient African Customs",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that tattoos and ritual scarification (balafres) were common from Nigeria to the Nile Valley, symbolizing maturity and spiritual renewal.",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  },
+  {
+    "question": "According to the text, what marks the beginning of history for many historians?",
+    "options": {
+      "A": "The invention of agriculture",
+      "B": "When humans develop means to tell their story to posterity",
+      "C": "The development of trade routes",
+      "D": "The formation of cities"
+    },
+    "answer": "B",
+    "category": "Historical Methodology",
+    "difficulty": "Easy",
+    "explanation": "The text explicitly states that for many historians, history begins when humans develop the ability to tell their story to future generations through means like art, industry, and writing.",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  },
+  {
+    "question": "What unique archaeological finds were discovered at Babimbi?",
+    "options": {
+      "A": "Only stone axes",
+      "B": "Only religious statues",
+      "C": "Stone wheels and polished stone statues",
+      "D": "Cave paintings"
+    },
+    "answer": "C",
+    "category": "Archaeological Discoveries",
+    "difficulty": "Hard",
+    "explanation": "At Babimbi, stone wheels (for weaving) and a collection of male and female polished stone statues with religious characteristics were found.",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  },
+  {
+    "question": "Which group of rock art is dated to between 5,000 and 2,000 BCE according to R. Mauny's classification?",
+    "options": {
+      "A": "The horse group",
+      "B": "The Libyco-Berber group",
+      "C": "The naturalistic paintings with Ethiopian fauna",
+      "D": "The Bovid pastoralists group"
+    },
+    "answer": "C",
+    "category": "Ancient Art History",
+    "difficulty": "Medium",
+    "explanation": "According to Mauny's classification, the naturalistic paintings with Ethiopian fauna date from 5,000 to 2,000 BCE.",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  },
+  {
+    "question": "How did one Pygmy survive the village's revenge?",
+    "options": {
+      "A": "He jumped through a window",
+      "B": "He was helped by a rat through an underground tunnel",
+      "C": "He climbed over the walls",
+      "D": "He disguised himself as a villager"
+    },
+    "answer": "B",
+    "category": "African Folklore",
+    "difficulty": "Medium",
+    "explanation": "A rat who had heard the revenge plot helped the young shepherd boy escape through an underground tunnel it had dug.",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  },
+  {
+    "question": "What was found along ancient caravan routes through the desert to the Mediterranean?",
+    "options": {
+      "A": "Pottery fragments",
+      "B": "Religious artifacts",
+      "C": "Ancient manuscripts",
+      "D": "Coins, jewelry, and rock paintings of chariots"
+    },
+    "answer": "D",
+    "category": "Archaeological Evidence",
+    "difficulty": "Medium",
+    "explanation": "Archaeological discoveries along caravan routes included coins, jewelry, and rock paintings depicting chariots",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  },
+  {
+    "question": "What historical evidence of trade routes was found near the Cross-River?",
+    "options": {
+      "A": "Ancient temples and monuments",
+      "B": "Rock paintings of chariots, coins, and beads",
+      "C": "Written manuscripts",
+      "D": "Ancient shipwrecks"
+    },
+    "answer": "B",
+    "category": "Archaeological Evidence",
+    "difficulty": "Medium",
+    "explanation": "The text mentions that rock paintings of chariots, coins, and beads were found near the Cross-River, indicating ancient trade routes.",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  },
+  {
+    "question": "What religious belief system did Strabon observe among the African peoples he described?",
+    "options": {
+      "A": "Pure monotheism",
+      "B": "Polytheistic worship",
+      "C": "Dualistic system with an immortal god and mortal deity",
+      "D": "Nature worship only"
+    },
+    "answer": "C",
+    "category": "Ancient African Religion",
+    "difficulty": "Hard",
+    "explanation": "Strabon noted a dualistic religious system that included belief in both an immortal god (creator of all things) and a vague, unnamed mortal deity, reflecting the coexistence of supreme god belief and ancestor worship.",
+    "quality_score": 0.96,
+    "source_topic": "history"
+  }
+]
