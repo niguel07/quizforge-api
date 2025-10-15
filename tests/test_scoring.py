@@ -28,7 +28,7 @@ class TestSubmitAnswer:
     def test_submit_first_answer_correct(self):
         """Test submitting first correct answer creates session."""
         response = client.post(
-            "/api/score/submit",
+            "/api/v1/score/submit",
             params={"username": "TestUser1", "question_id": 1, "correct": True}
         )
         assert response.status_code == 200
@@ -43,7 +43,7 @@ class TestSubmitAnswer:
     def test_submit_first_answer_incorrect(self):
         """Test submitting first incorrect answer."""
         response = client.post(
-            "/api/score/submit",
+            "/api/v1/score/submit",
             params={"username": "TestUser2", "question_id": 1, "correct": False}
         )
         assert response.status_code == 200
@@ -59,13 +59,13 @@ class TestSubmitAnswer:
         username = "TestUser3"
         
         # Submit correct answer
-        client.post("/api/score/submit", params={"username": username, "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": username, "question_id": 1, "correct": True})
         
         # Submit incorrect answer
-        client.post("/api/score/submit", params={"username": username, "question_id": 2, "correct": False})
+        client.post("/api/v1/score/submit", params={"username": username, "question_id": 2, "correct": False})
         
         # Submit correct answer
-        response = client.post("/api/score/submit", params={"username": username, "question_id": 3, "correct": True})
+        response = client.post("/api/v1/score/submit", params={"username": username, "question_id": 3, "correct": True})
         
         assert response.status_code == 200
         data = response.json()
@@ -76,14 +76,14 @@ class TestSubmitAnswer:
     def test_submit_empty_username(self):
         """Test that empty username is rejected."""
         response = client.post(
-            "/api/score/submit",
+            "/api/v1/score/submit",
             params={"username": "   ", "question_id": 1, "correct": True}
         )
         assert response.status_code == 400
     
     def test_submit_answer_persistence(self):
         """Test that answers are persisted to file."""
-        client.post("/api/score/submit", params={"username": "PersistTest", "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "PersistTest", "question_id": 1, "correct": True})
         
         # Read file directly
         assert SESSION_FILE.exists()
@@ -100,10 +100,10 @@ class TestGetUserScore:
     def test_get_existing_user(self):
         """Test retrieving an existing user's score."""
         # Create user session
-        client.post("/api/score/submit", params={"username": "GetUser1", "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "GetUser1", "question_id": 1, "correct": True})
         
         # Retrieve it
-        response = client.get("/api/score/GetUser1")
+        response = client.get("/api/v1/score/GetUser1")
         assert response.status_code == 200
         
         data = response.json()
@@ -113,7 +113,7 @@ class TestGetUserScore:
     
     def test_get_nonexistent_user(self):
         """Test retrieving a non-existent user returns 404."""
-        response = client.get("/api/score/NonExistentUser")
+        response = client.get("/api/v1/score/NonExistentUser")
         assert response.status_code == 404
     
     def test_get_user_shows_all_answers(self):
@@ -121,11 +121,11 @@ class TestGetUserScore:
         username = "HistoryUser"
         
         # Submit multiple answers
-        client.post("/api/score/submit", params={"username": username, "question_id": 1, "correct": True})
-        client.post("/api/score/submit", params={"username": username, "question_id": 2, "correct": False})
-        client.post("/api/score/submit", params={"username": username, "question_id": 3, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": username, "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": username, "question_id": 2, "correct": False})
+        client.post("/api/v1/score/submit", params={"username": username, "question_id": 3, "correct": True})
         
-        response = client.get(f"/api/score/{username}")
+        response = client.get(f"/api/v1/score/{username}")
         assert response.status_code == 200
         
         data = response.json()
@@ -138,7 +138,7 @@ class TestLeaderboard:
     
     def test_leaderboard_empty(self):
         """Test leaderboard when no users exist."""
-        response = client.get("/api/score/leaderboard/top")
+        response = client.get("/api/v1/score/leaderboard/top")
         assert response.status_code == 200
         
         data = response.json()
@@ -147,9 +147,9 @@ class TestLeaderboard:
     
     def test_leaderboard_single_user(self):
         """Test leaderboard with single user."""
-        client.post("/api/score/submit", params={"username": "Leader1", "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "Leader1", "question_id": 1, "correct": True})
         
-        response = client.get("/api/score/leaderboard/top")
+        response = client.get("/api/v1/score/leaderboard/top")
         assert response.status_code == 200
         
         data = response.json()
@@ -161,13 +161,13 @@ class TestLeaderboard:
         """Test that leaderboard is sorted by score."""
         # Create users with different scores
         for i in range(3):
-            client.post("/api/score/submit", params={"username": f"User{i}", "question_id": 1, "correct": True})
+            client.post("/api/v1/score/submit", params={"username": f"User{i}", "question_id": 1, "correct": True})
         
         # Add more points to User1
-        client.post("/api/score/submit", params={"username": "User1", "question_id": 2, "correct": True})
-        client.post("/api/score/submit", params={"username": "User1", "question_id": 3, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "User1", "question_id": 2, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "User1", "question_id": 3, "correct": True})
         
-        response = client.get("/api/score/leaderboard/top")
+        response = client.get("/api/v1/score/leaderboard/top")
         assert response.status_code == 200
         
         data = response.json()
@@ -181,10 +181,10 @@ class TestLeaderboard:
         """Test leaderboard respects limit parameter."""
         # Create 5 users
         for i in range(5):
-            client.post("/api/score/submit", params={"username": f"LimitUser{i}", "question_id": 1, "correct": True})
+            client.post("/api/v1/score/submit", params={"username": f"LimitUser{i}", "question_id": 1, "correct": True})
         
         # Request only top 3
-        response = client.get("/api/score/leaderboard/top?limit=3")
+        response = client.get("/api/v1/score/leaderboard/top?limit=3")
         assert response.status_code == 200
         
         data = response.json()
@@ -193,10 +193,10 @@ class TestLeaderboard:
     
     def test_leaderboard_invalid_limit(self):
         """Test that invalid limit is rejected."""
-        response = client.get("/api/score/leaderboard/top?limit=0")
+        response = client.get("/api/v1/score/leaderboard/top?limit=0")
         assert response.status_code == 422
         
-        response = client.get("/api/score/leaderboard/top?limit=100")
+        response = client.get("/api/v1/score/leaderboard/top?limit=100")
         assert response.status_code == 422
 
 
@@ -206,22 +206,22 @@ class TestResetUserSession:
     def test_reset_existing_user(self):
         """Test resetting an existing user's session."""
         # Create user
-        client.post("/api/score/submit", params={"username": "ResetUser", "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "ResetUser", "question_id": 1, "correct": True})
         
         # Verify user exists
-        assert client.get("/api/score/ResetUser").status_code == 200
+        assert client.get("/api/v1/score/ResetUser").status_code == 200
         
         # Reset
-        response = client.delete("/api/score/ResetUser")
+        response = client.delete("/api/v1/score/ResetUser")
         assert response.status_code == 200
         assert "message" in response.json()
         
         # Verify user is gone
-        assert client.get("/api/score/ResetUser").status_code == 404
+        assert client.get("/api/v1/score/ResetUser").status_code == 404
     
     def test_reset_nonexistent_user(self):
         """Test resetting non-existent user returns 404."""
-        response = client.delete("/api/score/NonExistent")
+        response = client.delete("/api/v1/score/NonExistent")
         assert response.status_code == 404
 
 
@@ -230,7 +230,7 @@ class TestGetAllUsers:
     
     def test_get_users_empty(self):
         """Test getting users when none exist."""
-        response = client.get("/api/score/users/list")
+        response = client.get("/api/v1/score/users/list")
         assert response.status_code == 200
         
         data = response.json()
@@ -241,9 +241,9 @@ class TestGetAllUsers:
         """Test getting multiple users."""
         # Create users
         for i in range(3):
-            client.post("/api/score/submit", params={"username": f"ListUser{i}", "question_id": 1, "correct": True})
+            client.post("/api/v1/score/submit", params={"username": f"ListUser{i}", "question_id": 1, "correct": True})
         
-        response = client.get("/api/score/users/list")
+        response = client.get("/api/v1/score/users/list")
         assert response.status_code == 200
         
         data = response.json()
@@ -255,9 +255,9 @@ class TestGetAllUsers:
         """Test that usernames are returned sorted."""
         # Create users in random order
         for username in ["Zebra", "Alpha", "Mike"]:
-            client.post("/api/score/submit", params={"username": username, "question_id": 1, "correct": True})
+            client.post("/api/v1/score/submit", params={"username": username, "question_id": 1, "correct": True})
         
-        response = client.get("/api/score/users/list")
+        response = client.get("/api/v1/score/users/list")
         data = response.json()
         
         usernames = data["usernames"]
@@ -276,13 +276,13 @@ class TestScoringIntegration:
         
         for idx, correct in enumerate(results):
             response = client.post(
-                "/api/score/submit",
+                "/api/v1/score/submit",
                 params={"username": username, "question_id": idx, "correct": correct}
             )
             assert response.status_code == 200
         
         # Check final stats
-        response = client.get(f"/api/score/{username}")
+        response = client.get(f"/api/v1/score/{username}")
         data = response.json()
         
         assert data["score"] == 3  # 3 correct out of 5
@@ -293,15 +293,15 @@ class TestScoringIntegration:
     def test_leaderboard_accuracy_tiebreaker(self):
         """Test that leaderboard uses accuracy as tiebreaker."""
         # User1: 2/2 = 100% accuracy
-        client.post("/api/score/submit", params={"username": "AccUser1", "question_id": 1, "correct": True})
-        client.post("/api/score/submit", params={"username": "AccUser1", "question_id": 2, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "AccUser1", "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "AccUser1", "question_id": 2, "correct": True})
         
         # User2: 2/3 = 66.67% accuracy
-        client.post("/api/score/submit", params={"username": "AccUser2", "question_id": 1, "correct": True})
-        client.post("/api/score/submit", params={"username": "AccUser2", "question_id": 2, "correct": True})
-        client.post("/api/score/submit", params={"username": "AccUser2", "question_id": 3, "correct": False})
+        client.post("/api/v1/score/submit", params={"username": "AccUser2", "question_id": 1, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "AccUser2", "question_id": 2, "correct": True})
+        client.post("/api/v1/score/submit", params={"username": "AccUser2", "question_id": 3, "correct": False})
         
-        response = client.get("/api/score/leaderboard/top")
+        response = client.get("/api/v1/score/leaderboard/top")
         leaderboard = response.json()["leaderboard"]
         
         # Both have score 2, but AccUser1 should rank higher due to better accuracy

@@ -17,13 +17,14 @@ class TestSystemEndpoints:
         response = client.get("/")
         assert response.status_code == 200
         data = response.json()
-        assert "message" in data
+        assert "name" in data
         assert "version" in data
         assert data["version"] == "1.0.0"
+        assert "endpoints" in data
     
     def test_health_route(self):
         """Test health endpoint returns OK status."""
-        response = client.get("/health")
+        response = client.get("/api/v1/health")
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "ok"
@@ -33,7 +34,7 @@ class TestSystemEndpoints:
     
     def test_api_info_route(self):
         """Test API info endpoint returns metadata."""
-        response = client.get("/api/info")
+        response = client.get("/api/v1/api/info")
         assert response.status_code == 200
         data = response.json()
         assert "total_questions" in data

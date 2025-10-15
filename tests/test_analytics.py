@@ -13,7 +13,7 @@ class TestStatsEndpoint:
     
     def test_stats_endpoint_success(self):
         """Test that stats endpoint returns all required fields."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -26,7 +26,7 @@ class TestStatsEndpoint:
     
     def test_stats_total_questions(self):
         """Test that total_questions matches actual data."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -34,7 +34,7 @@ class TestStatsEndpoint:
     
     def test_stats_categories_is_dict(self):
         """Test that categories is a dictionary."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -43,7 +43,7 @@ class TestStatsEndpoint:
     
     def test_stats_difficulty_is_dict(self):
         """Test that difficulty is a dictionary."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -52,7 +52,7 @@ class TestStatsEndpoint:
     
     def test_stats_topics_is_list(self):
         """Test that topics is a list."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -61,7 +61,7 @@ class TestStatsEndpoint:
     
     def test_stats_quality_stats(self):
         """Test quality_stats structure."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -73,7 +73,7 @@ class TestStatsEndpoint:
     
     def test_stats_unique_counts(self):
         """Test unique_counts structure."""
-        response = client.get("/api/stats")
+        response = client.get("/api/v1/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -89,7 +89,7 @@ class TestCategoriesEndpoint:
     
     def test_categories_endpoint_success(self):
         """Test that categories endpoint returns data."""
-        response = client.get("/api/categories")
+        response = client.get("/api/v1/categories")
         assert response.status_code == 200
         
         data = response.json()
@@ -98,7 +98,7 @@ class TestCategoriesEndpoint:
     
     def test_categories_list_is_sorted(self):
         """Test that categories are sorted alphabetically."""
-        response = client.get("/api/categories")
+        response = client.get("/api/v1/categories")
         assert response.status_code == 200
         
         data = response.json()
@@ -107,7 +107,7 @@ class TestCategoriesEndpoint:
     
     def test_categories_count_matches_list(self):
         """Test that count matches list length."""
-        response = client.get("/api/categories")
+        response = client.get("/api/v1/categories")
         assert response.status_code == 200
         
         data = response.json()
@@ -115,7 +115,7 @@ class TestCategoriesEndpoint:
     
     def test_categories_are_unique(self):
         """Test that all categories are unique."""
-        response = client.get("/api/categories")
+        response = client.get("/api/v1/categories")
         assert response.status_code == 200
         
         data = response.json()
@@ -128,7 +128,7 @@ class TestDifficultyEndpoint:
     
     def test_difficulty_endpoint_success(self):
         """Test that difficulty endpoint returns data."""
-        response = client.get("/api/difficulty")
+        response = client.get("/api/v1/difficulty")
         assert response.status_code == 200
         
         data = response.json()
@@ -137,7 +137,7 @@ class TestDifficultyEndpoint:
     
     def test_difficulty_levels_valid(self):
         """Test that difficulty levels are valid."""
-        response = client.get("/api/difficulty")
+        response = client.get("/api/v1/difficulty")
         assert response.status_code == 200
         
         data = response.json()
@@ -149,7 +149,7 @@ class TestDifficultyEndpoint:
     
     def test_difficulty_count_matches_list(self):
         """Test that count matches list length."""
-        response = client.get("/api/difficulty")
+        response = client.get("/api/v1/difficulty")
         assert response.status_code == 200
         
         data = response.json()
@@ -157,7 +157,7 @@ class TestDifficultyEndpoint:
     
     def test_difficulty_levels_sorted(self):
         """Test that difficulty levels are sorted."""
-        response = client.get("/api/difficulty")
+        response = client.get("/api/v1/difficulty")
         assert response.status_code == 200
         
         data = response.json()
@@ -170,7 +170,7 @@ class TestTopicsEndpoint:
     
     def test_topics_endpoint_success(self):
         """Test that topics endpoint returns data."""
-        response = client.get("/api/topics")
+        response = client.get("/api/v1/topics")
         assert response.status_code == 200
         
         data = response.json()
@@ -179,7 +179,7 @@ class TestTopicsEndpoint:
     
     def test_topics_list_is_sorted(self):
         """Test that topics are sorted alphabetically."""
-        response = client.get("/api/topics")
+        response = client.get("/api/v1/topics")
         assert response.status_code == 200
         
         data = response.json()
@@ -188,7 +188,7 @@ class TestTopicsEndpoint:
     
     def test_topics_count_matches_list(self):
         """Test that count matches list length."""
-        response = client.get("/api/topics")
+        response = client.get("/api/v1/topics")
         assert response.status_code == 200
         
         data = response.json()
@@ -196,7 +196,7 @@ class TestTopicsEndpoint:
     
     def test_topics_are_unique(self):
         """Test that all topics are unique."""
-        response = client.get("/api/topics")
+        response = client.get("/api/v1/topics")
         assert response.status_code == 200
         
         data = response.json()
@@ -209,7 +209,7 @@ class TestQuestionCountEndpoint:
     
     def test_count_endpoint_success(self):
         """Test that count endpoint returns data."""
-        response = client.get("/api/count")
+        response = client.get("/api/v1/count")
         assert response.status_code == 200
         
         data = response.json()
@@ -217,7 +217,7 @@ class TestQuestionCountEndpoint:
     
     def test_count_is_positive(self):
         """Test that count is a positive number."""
-        response = client.get("/api/count")
+        response = client.get("/api/v1/count")
         assert response.status_code == 200
         
         data = response.json()
@@ -225,7 +225,7 @@ class TestQuestionCountEndpoint:
     
     def test_count_matches_data(self):
         """Test that count matches actual dataset size."""
-        response = client.get("/api/count")
+        response = client.get("/api/v1/count")
         assert response.status_code == 200
         
         data = response.json()
@@ -237,7 +237,7 @@ class TestSummaryEndpoint:
     
     def test_summary_endpoint_success(self):
         """Test that summary endpoint returns data."""
-        response = client.get("/api/summary")
+        response = client.get("/api/v1/summary")
         assert response.status_code == 200
         
         data = response.json()
@@ -245,7 +245,7 @@ class TestSummaryEndpoint:
     
     def test_summary_contains_all_stats(self):
         """Test that summary contains all expected fields."""
-        response = client.get("/api/summary")
+        response = client.get("/api/v1/summary")
         assert response.status_code == 200
         
         summary = response.json()["summary"]
@@ -258,8 +258,8 @@ class TestSummaryEndpoint:
     
     def test_summary_matches_stats_endpoint(self):
         """Test that summary matches stats endpoint data."""
-        stats_response = client.get("/api/stats")
-        summary_response = client.get("/api/summary")
+        stats_response = client.get("/api/v1/stats")
+        summary_response = client.get("/api/v1/summary")
         
         assert stats_response.status_code == 200
         assert summary_response.status_code == 200
@@ -276,7 +276,7 @@ class TestCategoryStatsEndpoint:
     
     def test_category_stats_endpoint_success(self):
         """Test that category stats endpoint returns data."""
-        response = client.get("/api/categories/stats")
+        response = client.get("/api/v1/categories/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -285,7 +285,7 @@ class TestCategoryStatsEndpoint:
     
     def test_category_stats_structure(self):
         """Test that each category stat has required fields."""
-        response = client.get("/api/categories/stats")
+        response = client.get("/api/v1/categories/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -300,7 +300,7 @@ class TestCategoryStatsEndpoint:
     
     def test_category_stats_percentages(self):
         """Test that percentages add up correctly."""
-        response = client.get("/api/categories/stats")
+        response = client.get("/api/v1/categories/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -312,7 +312,7 @@ class TestCategoryStatsEndpoint:
     
     def test_category_stats_sorted_by_count(self):
         """Test that stats are sorted by count (descending)."""
-        response = client.get("/api/categories/stats")
+        response = client.get("/api/v1/categories/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -328,7 +328,7 @@ class TestDifficultyStatsEndpoint:
     
     def test_difficulty_stats_endpoint_success(self):
         """Test that difficulty stats endpoint returns data."""
-        response = client.get("/api/difficulty/stats")
+        response = client.get("/api/v1/difficulty/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -337,7 +337,7 @@ class TestDifficultyStatsEndpoint:
     
     def test_difficulty_stats_structure(self):
         """Test that each difficulty stat has required fields."""
-        response = client.get("/api/difficulty/stats")
+        response = client.get("/api/v1/difficulty/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -351,7 +351,7 @@ class TestDifficultyStatsEndpoint:
     
     def test_difficulty_stats_percentages(self):
         """Test that percentages add up to 100."""
-        response = client.get("/api/difficulty/stats")
+        response = client.get("/api/v1/difficulty/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -363,7 +363,7 @@ class TestDifficultyStatsEndpoint:
     
     def test_difficulty_stats_order(self):
         """Test that difficulty stats are in correct order."""
-        response = client.get("/api/difficulty/stats")
+        response = client.get("/api/v1/difficulty/stats")
         assert response.status_code == 200
         
         data = response.json()
@@ -382,14 +382,14 @@ class TestAnalyticsIntegration:
     def test_all_analytics_endpoints_accessible(self):
         """Test that all analytics endpoints are accessible."""
         endpoints = [
-            "/api/stats",
-            "/api/categories",
-            "/api/difficulty",
-            "/api/topics",
-            "/api/count",
-            "/api/summary",
-            "/api/categories/stats",
-            "/api/difficulty/stats"
+            "/api/v1/stats",
+            "/api/v1/categories",
+            "/api/v1/difficulty",
+            "/api/v1/topics",
+            "/api/v1/count",
+            "/api/v1/summary",
+            "/api/v1/categories/stats",
+            "/api/v1/difficulty/stats"
         ]
         
         for endpoint in endpoints:
@@ -398,11 +398,11 @@ class TestAnalyticsIntegration:
     
     def test_analytics_data_consistency(self):
         """Test consistency across different analytics endpoints."""
-        stats = client.get("/api/stats").json()
-        categories = client.get("/api/categories").json()
-        difficulties = client.get("/api/difficulty").json()
-        topics = client.get("/api/topics").json()
-        count = client.get("/api/count").json()
+        stats = client.get("/api/v1/stats").json()
+        categories = client.get("/api/v1/categories").json()
+        difficulties = client.get("/api/v1/difficulty").json()
+        topics = client.get("/api/v1/topics").json()
+        count = client.get("/api/v1/count").json()
         
         # All should reflect same dataset size
         assert stats["total_questions"] == count["total_questions"]

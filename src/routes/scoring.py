@@ -11,7 +11,7 @@ from src.schemas.scoring_schema import (
 )
 from typing import List
 
-router = APIRouter(prefix="/api/score", tags=["Scoring"])
+router = APIRouter(prefix="/score", tags=["Scoring"])
 
 
 @router.post("/submit", response_model=UserSession, response_description="User session updated successfully")

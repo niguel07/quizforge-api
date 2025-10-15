@@ -16,7 +16,7 @@ from src.schemas.analytics_schema import (
     DifficultyStatDetail
 )
 
-router = APIRouter(prefix="/api", tags=["Analytics"])
+router = APIRouter(tags=["Analytics"])
 
 
 @router.get("/stats", response_model=StatsResponse)

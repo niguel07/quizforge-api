@@ -13,7 +13,7 @@ from src.schemas.response_schema import (
 from src.utils.randomizer import random_sample
 from src.utils.pagination import paginate
 
-router = APIRouter(prefix="/api/questions", tags=["Questions"])
+router = APIRouter(prefix="/questions", tags=["Questions"])
 
 
 @router.get("/random", response_model=List[Question])

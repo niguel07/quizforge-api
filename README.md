@@ -23,7 +23,11 @@ QuizForge API is a robust, scalable backend service built with FastAPI for manag
 ✅ **Performance Optimized** - Efficient aggregations for 10,000+ questions  
 ✅ **Pagination Support** - Efficient handling of large datasets  
 ✅ **Type Safety** - Full Pydantic validation for data integrity  
-✅ **Testing Suite** - Comprehensive tests (76 tests) for all functionality  
+✅ **Testing Suite** - Comprehensive tests (110 tests) for all functionality  
+✅ **Docker Support** - Production-ready containerization  
+✅ **API Versioning** - Version control with `/api/v1/` prefix  
+✅ **Session Management** - User session tracking and persistence  
+✅ **Leaderboard System** - User rankings and competition tracking  
 ✅ **CORS Support** - Cross-origin resource sharing enabled  
 
 ---
@@ -34,35 +38,45 @@ QuizForge API is a robust, scalable backend service built with FastAPI for manag
 quizforge-api/
 ├── docs/
 │   └── questions.json          # Dataset with 99 questions
+├── data/
+│   └── sessions.json           # User session data storage
 ├── src/
 │   ├── __init__.py
 │   ├── main.py                 # FastAPI application entrypoint
 │   ├── core/
 │   │   ├── __init__.py
 │   │   ├── config.py           # Environment configuration
-│   │   └── loader.py           # Dataset loading logic
+│   │   ├── loader.py           # Dataset loading logic
+│   │   └── error_handler.py   # Global error handling
 │   ├── routes/
 │   │   ├── __init__.py
 │   │   ├── base.py             # Health & info routes
 │   │   ├── questions.py        # Question endpoints
-│   │   └── analytics.py        # Analytics endpoints
+│   │   ├── analytics.py        # Analytics endpoints
+│   │   └── scoring.py          # Scoring & leaderboard endpoints
 │   ├── schemas/
 │   │   ├── __init__.py
 │   │   ├── question_schema.py  # Question models
 │   │   ├── response_schema.py  # Response models
-│   │   └── analytics_schema.py # Analytics models
+│   │   ├── analytics_schema.py # Analytics models
+│   │   └── scoring_schema.py   # Scoring models
 │   └── utils/
 │       ├── __init__.py
 │       ├── file_manager.py     # File utilities
 │       ├── logger.py           # Logging configuration
 │       ├── randomizer.py       # Random sampling
 │       ├── pagination.py       # Pagination utilities
-│       └── analyzer.py         # Analytics aggregations
+│       ├── analyzer.py         # Analytics aggregations
+│       └── scorer.py           # Session & scoring logic
 ├── tests/
 │   ├── __init__.py
 │   ├── test_setup.py           # Setup tests
 │   ├── test_questions.py       # Question endpoint tests
-│   └── test_analytics.py       # Analytics endpoint tests
+│   ├── test_analytics.py       # Analytics endpoint tests
+│   ├── test_scoring.py         # Scoring endpoint tests
+│   └── test_integration.py     # End-to-end integration tests
+├── Dockerfile                  # Docker container configuration
+├── .dockerignore               # Docker ignore rules
 ├── .env.example                # Environment template
 ├── .gitignore                  # Git ignore rules
 ├── requirements.txt            # Python dependencies
@@ -123,44 +137,87 @@ python -m src.main
 
 The API will be available at: **http://localhost:8000**
 
+### Running with Docker
+
+**Build the Docker image:**
+```bash
+docker build -t quizforge-api .
+```
+
+**Run the container:**
+```bash
+docker run -d -p 8000:8000 --name quizforge quizforge-api
+```
+
+**Using Docker Compose (optional):**
+```yaml
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - APP_NAME=QuizForge API
+      - PORT=8000
+```
+
+```bash
+docker-compose up -d
+```
+
 ---
 
 ## 📚 API Endpoints
 
+> **Note:** All endpoints use the `/api/v1/` prefix for version control
+
 ### System Endpoints
 
-| Method | Endpoint      | Description                          |
-|--------|---------------|--------------------------------------|
-| GET    | `/`           | Root endpoint - Welcome message      |
-| GET    | `/health`     | Health check with system status      |
-| GET    | `/api/info`   | API metadata and dataset information |
+| Method | Endpoint          | Description                          |
+|--------|-------------------|--------------------------------------|
+| GET    | `/`               | Root endpoint - Welcome message      |
+| GET    | `/api/v1/health`  | Health check with system status      |
+| GET    | `/api/v1/info`    | API metadata and dataset information |
 
 ### Question Endpoints
 
-| Method | Endpoint                           | Description                                    |
-|--------|------------------------------------|------------------------------------------------|
-| GET    | `/api/questions/`                  | Get all questions (paginated)                  |
-| GET    | `/api/questions/{id}`              | Get specific question by ID                    |
-| GET    | `/api/questions/random`            | Get random questions                           |
-| GET    | `/api/questions/category/{name}`   | Filter questions by category                   |
-| GET    | `/api/questions/difficulty/{level}`| Filter questions by difficulty (Easy/Medium/Hard)|
-| GET    | `/api/questions/search`            | Search questions by keyword                    |
-| GET    | `/api/questions/categories`        | Get list of all categories                     |
-| GET    | `/api/questions/difficulties`      | Get list of all difficulty levels              |
-| POST   | `/api/questions/answer`            | Validate answer and get feedback               |
+| Method | Endpoint                                   | Description                                    |
+|--------|--------------------------------------------|------------------------------------------------|
+| GET    | `/api/v1/questions/`                       | Get all questions (paginated)                  |
+| GET    | `/api/v1/questions/{id}`                   | Get specific question by ID                    |
+| GET    | `/api/v1/questions/random`                 | Get random questions                           |
+| GET    | `/api/v1/questions/category/{name}`        | Filter questions by category                   |
+| GET    | `/api/v1/questions/difficulty/{level}`     | Filter questions by difficulty (Easy/Medium/Hard)|
+| GET    | `/api/v1/questions/search`                 | Search questions by keyword                    |
+| GET    | `/api/v1/questions/categories`             | Get list of all categories                     |
+| GET    | `/api/v1/questions/difficulties`           | Get list of all difficulty levels              |
+| POST   | `/api/v1/questions/answer`                 | Validate answer and get feedback               |
 
 ### Analytics Endpoints
 
-| Method | Endpoint                    | Description                                        |
-|--------|-----------------------------|----------------------------------------------------|
-| GET    | `/api/stats`                | Comprehensive dataset statistics                   |
-| GET    | `/api/categories`           | List of all unique categories                      |
-| GET    | `/api/difficulty`           | List of all difficulty levels                      |
-| GET    | `/api/topics`               | List of all unique topics                          |
-| GET    | `/api/count`                | Total question count                               |
-| GET    | `/api/summary`              | Compact summary of all metadata                    |
-| GET    | `/api/categories/stats`     | Detailed category statistics with percentages      |
-| GET    | `/api/difficulty/stats`     | Detailed difficulty statistics with percentages    |
+| Method | Endpoint                        | Description                                        |
+|--------|---------------------------------|----------------------------------------------------|
+| GET    | `/api/v1/stats`                 | Comprehensive dataset statistics                   |
+| GET    | `/api/v1/categories`            | List of all unique categories                      |
+| GET    | `/api/v1/difficulty`            | List of all difficulty levels                      |
+| GET    | `/api/v1/topics`                | List of all unique topics                          |
+| GET    | `/api/v1/count`                 | Total question count                               |
+| GET    | `/api/v1/summary`               | Compact summary of all metadata                    |
+| GET    | `/api/v1/categories/stats`      | Detailed category statistics with percentages      |
+| GET    | `/api/v1/difficulty/stats`      | Detailed difficulty statistics with percentages    |
+
+### Scoring & Leaderboard Endpoints
+
+| Method | Endpoint                          | Description                                        |
+|--------|-----------------------------------|----------------------------------------------------|
+| POST   | `/api/v1/score/submit`            | Submit an answer and update user session           |
+| GET    | `/api/v1/score/{username}`        | Get user session statistics                        |
+| GET    | `/api/v1/score/leaderboard/top`   | Get global leaderboard (top users)                 |
+| GET    | `/api/v1/score/users/list`        | Get list of all users with active sessions         |
+| DELETE | `/api/v1/score/{username}`        | Reset (delete) a user's session data               |
 
 ### Documentation
 
@@ -173,7 +230,7 @@ The API will be available at: **http://localhost:8000**
 
 #### 1. Get Random Questions
 ```bash
-GET /api/questions/random?count=5
+GET /api/v1/questions/random?count=5
 ```
 ```json
 [
@@ -193,19 +250,19 @@ GET /api/questions/random?count=5
 
 #### 2. Filter by Category
 ```bash
-GET /api/questions/category/Geography?limit=10
+GET /api/v1/questions/category/Geography?limit=10
 ```
 Returns up to 10 questions from the Geography category.
 
 #### 3. Search Questions
 ```bash
-GET /api/questions/search?q=Cameroon&limit=5
+GET /api/v1/questions/search?q=Cameroon&limit=5
 ```
 Returns up to 5 questions containing "Cameroon" in the question text.
 
 #### 4. Validate Answer
 ```bash
-POST /api/questions/answer
+POST /api/v1/questions/answer
 Content-Type: application/json
 
 {
@@ -226,7 +283,7 @@ Content-Type: application/json
 
 #### 5. Get Categories List
 ```bash
-GET /api/questions/categories
+GET /api/v1/questions/categories
 ```
 ```json
 {
@@ -237,7 +294,7 @@ GET /api/questions/categories
 
 #### 6. Get Analytics Statistics
 ```bash
-GET /api/stats
+GET /api/v1/stats
 ```
 ```json
 {
@@ -268,7 +325,7 @@ GET /api/stats
 
 #### 7. Get Detailed Category Stats
 ```bash
-GET /api/categories/stats
+GET /api/v1/categories/stats
 ```
 ```json
 {
@@ -287,6 +344,72 @@ GET /api/categories/stats
   ]
 }
 ```
+
+#### 8. Submit Answer and Track Score
+```bash
+POST /api/v1/score/submit?username=JohnDoe&question_id=42&correct=true
+```
+**Response:**
+```json
+{
+  "username": "JohnDoe",
+  "score": 15,
+  "accuracy": 78.95,
+  "total_attempts": 19,
+  "created_at": "2025-10-15T10:30:00",
+  "last_updated": "2025-10-15T14:22:00",
+  "answers": [
+    {
+      "question_id": 42,
+      "correct": true,
+      "timestamp": "2025-10-15T14:22:00"
+    }
+  ]
+}
+```
+
+#### 9. Get User Statistics
+```bash
+GET /api/v1/score/JohnDoe
+```
+Returns complete user session with score, accuracy, and answer history.
+
+#### 10. Get Leaderboard
+```bash
+GET /api/v1/score/leaderboard/top?limit=10
+```
+**Response:**
+```json
+{
+  "total_users": 45,
+  "leaderboard": [
+    {
+      "username": "TopPlayer",
+      "score": 98,
+      "accuracy": 98.0,
+      "total_attempts": 100
+    },
+    {
+      "username": "JohnDoe",
+      "score": 95,
+      "accuracy": 95.0,
+      "total_attempts": 100
+    }
+  ]
+}
+```
+
+#### 11. Get All Users
+```bash
+GET /api/v1/score/users/list
+```
+Returns list of all users with active sessions.
+
+#### 12. Reset User Session
+```bash
+DELETE /api/v1/score/JohnDoe
+```
+Permanently deletes user session data.
 
 ---
 
@@ -308,7 +431,7 @@ pytest tests/test_questions.py -v
 pytest --cov=src tests/
 ```
 
-**Test Coverage (76 Tests):**
+**Test Coverage (110 Tests):**
 - ✅ System endpoints (health, info, root)
 - ✅ Dataset loading and validation
 - ✅ Random question generation
@@ -320,7 +443,14 @@ pytest --cov=src tests/
 - ✅ Analytics & statistics endpoints
 - ✅ Category and difficulty statistics
 - ✅ Data consistency across endpoints
-- ✅ Error handling (404, 422, 400, 503)
+- ✅ Scoring & session management
+- ✅ Leaderboard functionality
+- ✅ User session persistence
+- ✅ Integration tests (end-to-end workflows)
+- ✅ API versioning (`/api/v1/` prefix)
+- ✅ Global error handling
+- ✅ Performance benchmarks
+- ✅ Error handling (404, 422, 400, 500, 503)
 - ✅ API documentation accessibility
 
 ---
@@ -413,7 +543,7 @@ git commit -m "Description of changes"
 git push origin feature-name
 ```
 
-**Current Branch:** `phase-1-setup`
+**Current Branch:** `phase-5-final-release`
 
 ---
 
@@ -434,21 +564,29 @@ Interactive documentation allows you to:
 
 ## 🔮 Future Enhancements
 
-Phase 4+ planned features:
+Completed features:
 - ✅ ~~Question filtering by category/difficulty~~ (Phase 2 Complete)
 - ✅ ~~Random question selection~~ (Phase 2 Complete)
 - ✅ ~~Answer validation~~ (Phase 2 Complete)
 - ✅ ~~Analytics & statistics~~ (Phase 3 Complete)
-- User authentication & authorization
-- Quiz session management
-- Score tracking & leaderboards
-- User progress analytics
-- Database integration (PostgreSQL)
-- Caching layer (Redis)
-- Rate limiting
-- Admin dashboard
-- Question contribution system
-- Multi-language support
+- ✅ ~~Score tracking & leaderboards~~ (Phase 5 Complete)
+- ✅ ~~Quiz session management~~ (Phase 5 Complete)
+- ✅ ~~User progress analytics~~ (Phase 5 Complete)
+- ✅ ~~API versioning~~ (Phase 5 Complete)
+- ✅ ~~Docker support~~ (Phase 5 Complete)
+- ✅ ~~Global error handling~~ (Phase 5 Complete)
+
+Planned features (Phase 6+):
+- 🔄 User authentication & authorization (JWT)
+- 🔄 Database integration (PostgreSQL/MongoDB)
+- 🔄 Caching layer (Redis)
+- 🔄 Rate limiting & API throttling
+- 🔄 Admin dashboard
+- 🔄 Question contribution system
+- 🔄 Multi-language support
+- 🔄 Email notifications
+- 🔄 Real-time quiz competitions
+- 🔄 Advanced analytics dashboards
 
 ---
 
@@ -494,7 +632,7 @@ For questions or issues:
 
 **Version:** 1.0.0  
 **Last Updated:** October 2025  
-**Status:** Phase 3 - Analytics & Insights Complete ✅
+**Status:** Phase 5 - Final Release Complete ✅
 
 ---
 

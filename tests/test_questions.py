@@ -13,7 +13,7 @@ class TestRandomQuestions:
     
     def test_get_random_questions_default(self):
         """Test getting random questions with default count."""
-        response = client.get("/api/questions/random")
+        response = client.get("/api/v1/questions/random")
         assert response.status_code == 200
         data = response.json()
         assert isinstance(data, list)
@@ -21,7 +21,7 @@ class TestRandomQuestions:
         
     def test_get_random_questions_custom_count(self):
         """Test getting random questions with custom count."""
-        response = client.get("/api/questions/random?count=5")
+        response = client.get("/api/v1/questions/random?count=5")
         assert response.status_code == 200
         data = response.json()
         assert isinstance(data, list)
@@ -29,19 +29,19 @@ class TestRandomQuestions:
         
     def test_get_random_questions_max_limit(self):
         """Test maximum limit enforcement."""
-        response = client.get("/api/questions/random?count=100")
+        response = client.get("/api/v1/questions/random?count=100")
         assert response.status_code == 200
         data = response.json()
         assert len(data) <= 100
         
     def test_get_random_questions_invalid_count(self):
         """Test validation of invalid count."""
-        response = client.get("/api/questions/random?count=0")
+        response = client.get("/api/v1/questions/random?count=0")
         assert response.status_code == 422  # Validation error
         
     def test_random_questions_have_required_fields(self):
         """Test that random questions have all required fields."""
-        response = client.get("/api/questions/random?count=1")
+        response = client.get("/api/v1/questions/random?count=1")
         assert response.status_code == 200
         data = response.json()
         if data:
@@ -62,7 +62,7 @@ class TestCategoryFilter:
         # Get a category from the data
         if QUESTIONS_DATA:
             category = QUESTIONS_DATA[0].get("category")
-            response = client.get(f"/api/questions/category/{category}")
+            response = client.get(f"/api/v1/questions/category/{category}")
             assert response.status_code == 200
             data = response.json()
             assert isinstance(data, list)
@@ -73,14 +73,14 @@ class TestCategoryFilter:
     
     def test_get_by_invalid_category(self):
         """Test filtering by non-existent category."""
-        response = client.get("/api/questions/category/NonExistentCategory123")
+        response = client.get("/api/v1/questions/category/NonExistentCategory123")
         assert response.status_code == 404
         
     def test_category_with_limit(self):
         """Test category filtering with limit."""
         if QUESTIONS_DATA:
             category = QUESTIONS_DATA[0].get("category")
-            response = client.get(f"/api/questions/category/{category}?limit=5")
+            response = client.get(f"/api/v1/questions/category/{category}?limit=5")
             assert response.status_code == 200
             data = response.json()
             assert len(data) <= 5
@@ -89,7 +89,7 @@ class TestCategoryFilter:
         """Test that category search is case-insensitive."""
         if QUESTIONS_DATA:
             category = QUESTIONS_DATA[0].get("category")
-            response = client.get(f"/api/questions/category/{category.upper()}")
+            response = client.get(f"/api/v1/questions/category/{category.upper()}")
             assert response.status_code == 200
 
 
@@ -109,19 +109,19 @@ class TestDifficultyFilter:
     
     def test_get_by_invalid_difficulty(self):
         """Test filtering by invalid difficulty."""
-        response = client.get("/api/questions/difficulty/VeryVeryHard")
+        response = client.get("/api/v1/questions/difficulty/VeryVeryHard")
         assert response.status_code == 404
         
     def test_difficulty_with_limit(self):
         """Test difficulty filtering with limit."""
-        response = client.get("/api/questions/difficulty/Easy?limit=3")
+        response = client.get("/api/v1/questions/difficulty/Easy?limit=3")
         if response.status_code == 200:
             data = response.json()
             assert len(data) <= 3
     
     def test_difficulty_case_insensitive(self):
         """Test that difficulty search is case-insensitive."""
-        response = client.get("/api/questions/difficulty/easy")
+        response = client.get("/api/v1/questions/difficulty/easy")
         if response.status_code == 200:
             data = response.json()
             assert all(q["difficulty"].lower() == "easy" for q in data)
@@ -133,7 +133,7 @@ class TestSearchQuestions:
     def test_search_with_valid_query(self):
         """Test searching with a valid query."""
         # Search for a common word that likely exists
-        response = client.get("/api/questions/search?q=the")
+        response = client.get("/api/v1/questions/search?q=the")
         # Either 200 (found) or 404 (not found) is acceptable
         assert response.status_code in [200, 404]
         
@@ -155,12 +155,12 @@ class TestSearchQuestions:
     
     def test_search_too_short(self):
         """Test that short queries are rejected."""
-        response = client.get("/api/questions/search?q=a")
+        response = client.get("/api/v1/questions/search?q=a")
         assert response.status_code == 422  # Validation error
         
     def test_search_with_limit(self):
         """Test search with limit parameter."""
-        response = client.get("/api/questions/search?q=the&limit=5")
+        response = client.get("/api/v1/questions/search?q=the&limit=5")
         if response.status_code == 200:
             data = response.json()
             assert len(data) <= 5
@@ -174,7 +174,7 @@ class TestSearchQuestions:
     
     def test_search_with_difficulty_filter(self):
         """Test search with difficulty filter."""
-        response = client.get("/api/questions/search?q=the&difficulty=Easy")
+        response = client.get("/api/v1/questions/search?q=the&difficulty=Easy")
         assert response.status_code in [200, 404]
 
 
@@ -189,7 +189,7 @@ class TestAnswerValidation:
                 "question_id": question["id"],
                 "selected_answer": question["answer"]
             }
-            response = client.post("/api/questions/answer", json=payload)
+            response = client.post("/api/v1/questions/answer", json=payload)
             assert response.status_code == 200
             data = response.json()
             assert data["correct"] is True
@@ -207,7 +207,7 @@ class TestAnswerValidation:
                 "question_id": question["id"],
                 "selected_answer": wrong
             }
-            response = client.post("/api/questions/answer", json=payload)
+            response = client.post("/api/v1/questions/answer", json=payload)
             assert response.status_code == 200
             data = response.json()
             assert data["correct"] is False
@@ -220,7 +220,7 @@ class TestAnswerValidation:
             "question_id": 999999,
             "selected_answer": "A"
         }
-        response = client.post("/api/questions/answer", json=payload)
+        response = client.post("/api/v1/questions/answer", json=payload)
         assert response.status_code == 404
     
     def test_validate_invalid_answer_format(self):
@@ -230,12 +230,12 @@ class TestAnswerValidation:
                 "question_id": QUESTIONS_DATA[0]["id"],
                 "selected_answer": "Z"  # Invalid option
             }
-            response = client.post("/api/questions/answer", json=payload)
+            response = client.post("/api/v1/questions/answer", json=payload)
             assert response.status_code == 400
     
     def test_validate_missing_fields(self):
         """Test validation with missing fields."""
-        response = client.post("/api/questions/answer", json={})
+        response = client.post("/api/v1/questions/answer", json={})
         assert response.status_code == 422  # Validation error
 
 
@@ -244,7 +244,7 @@ class TestCategoriesEndpoint:
     
     def test_get_categories(self):
         """Test getting list of categories."""
-        response = client.get("/api/questions/categories")
+        response = client.get("/api/v1/questions/categories")
         assert response.status_code == 200
         data = response.json()
         assert "count" in data
@@ -254,7 +254,7 @@ class TestCategoriesEndpoint:
     
     def test_categories_are_unique(self):
         """Test that categories list contains unique values."""
-        response = client.get("/api/questions/categories")
+        response = client.get("/api/v1/questions/categories")
         assert response.status_code == 200
         data = response.json()
         categories = data["categories"]
@@ -266,7 +266,7 @@ class TestDifficultiesEndpoint:
     
     def test_get_difficulties(self):
         """Test getting list of difficulty levels."""
-        response = client.get("/api/questions/difficulties")
+        response = client.get("/api/v1/questions/difficulties")
         assert response.status_code == 200
         data = response.json()
         assert "count" in data
@@ -276,7 +276,7 @@ class TestDifficultiesEndpoint:
     
     def test_difficulties_are_valid(self):
         """Test that returned difficulties are valid levels."""
-        response = client.get("/api/questions/difficulties")
+        response = client.get("/api/v1/questions/difficulties")
         assert response.status_code == 200
         data = response.json()
         valid_levels = {"Easy", "Medium", "Hard"}
@@ -291,14 +291,14 @@ class TestGetQuestionById:
         """Test getting an existing question by ID."""
         if QUESTIONS_DATA:
             question_id = QUESTIONS_DATA[0]["id"]
-            response = client.get(f"/api/questions/{question_id}")
+            response = client.get(f"/api/v1/questions/{question_id}")
             assert response.status_code == 200
             data = response.json()
             assert data["id"] == question_id
     
     def test_get_nonexistent_question(self):
         """Test getting a non-existent question."""
-        response = client.get("/api/questions/999999")
+        response = client.get("/api/v1/questions/999999")
         assert response.status_code == 404
 
 
@@ -307,7 +307,7 @@ class TestGetAllQuestions:
     
     def test_get_all_questions_default(self):
         """Test getting all questions with default pagination."""
-        response = client.get("/api/questions/")
+        response = client.get("/api/v1/questions/")
         assert response.status_code == 200
         data = response.json()
         assert isinstance(data, list)
@@ -315,7 +315,7 @@ class TestGetAllQuestions:
     
     def test_get_all_questions_with_pagination(self):
         """Test pagination parameters."""
-        response = client.get("/api/questions/?page=1&limit=10")
+        response = client.get("/api/v1/questions/?page=1&limit=10")
         assert response.status_code == 200
         data = response.json()
         assert isinstance(data, list)
@@ -323,7 +323,7 @@ class TestGetAllQuestions:
     
     def test_pagination_page_2(self):
         """Test getting second page."""
-        response = client.get("/api/questions/?page=2&limit=10")
+        response = client.get("/api/v1/questions/?page=2&limit=10")
         assert response.status_code == 200
         data = response.json()
         assert isinstance(data, list)
