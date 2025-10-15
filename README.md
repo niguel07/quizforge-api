@@ -8,7 +8,7 @@
 
 ## 📖 Overview
 
-QuizForge API is a robust, scalable backend service built with FastAPI for managing and serving quiz questions. This Phase 1 implementation establishes the foundational architecture with clean code organization, environment configuration, and comprehensive testing.
+QuizForge API is a robust, scalable backend service built with FastAPI for managing and serving quiz questions. This implementation provides a complete REST API with filtering, search, randomization, and answer validation capabilities - optimized for educational platforms and quiz applications.
 
 ### Key Features
 
@@ -16,8 +16,12 @@ QuizForge API is a robust, scalable backend service built with FastAPI for manag
 ✅ **Environment Configuration** - Flexible settings management with `.env` support  
 ✅ **Dataset Management** - Efficient loading and validation of JSON question datasets  
 ✅ **RESTful API** - Clean endpoints with automatic OpenAPI documentation  
+✅ **Question Filtering** - Filter by category, difficulty, or search by keyword  
+✅ **Random Questions** - Generate random question sets for quizzes  
+✅ **Answer Validation** - Validate learner answers with detailed feedback  
+✅ **Pagination Support** - Efficient handling of large datasets (10,000+ questions)  
 ✅ **Type Safety** - Full Pydantic validation for data integrity  
-✅ **Testing Suite** - Comprehensive tests for all core functionality  
+✅ **Testing Suite** - Comprehensive tests (41 tests) for all functionality  
 ✅ **CORS Support** - Cross-origin resource sharing enabled  
 
 ---
@@ -37,17 +41,22 @@ quizforge-api/
 │   │   └── loader.py           # Dataset loading logic
 │   ├── routes/
 │   │   ├── __init__.py
-│   │   └── base.py             # Health & info routes
+│   │   ├── base.py             # Health & info routes
+│   │   └── questions.py        # Question endpoints
 │   ├── schemas/
 │   │   ├── __init__.py
-│   │   └── question_schema.py  # Pydantic models
+│   │   ├── question_schema.py  # Question models
+│   │   └── response_schema.py  # Response models
 │   └── utils/
 │       ├── __init__.py
 │       ├── file_manager.py     # File utilities
-│       └── logger.py           # Logging configuration
+│       ├── logger.py           # Logging configuration
+│       ├── randomizer.py       # Random sampling
+│       └── pagination.py       # Pagination utilities
 ├── tests/
 │   ├── __init__.py
-│   └── test_setup.py           # Test suite
+│   ├── test_setup.py           # Setup tests
+│   └── test_questions.py       # Question endpoint tests
 ├── .env.example                # Environment template
 ├── .gitignore                  # Git ignore rules
 ├── requirements.txt            # Python dependencies
@@ -117,8 +126,22 @@ The API will be available at: **http://localhost:8000**
 | Method | Endpoint      | Description                          |
 |--------|---------------|--------------------------------------|
 | GET    | `/`           | Root endpoint - Welcome message      |
-| GET    | `/health`     | Health check                         |
+| GET    | `/health`     | Health check with system status      |
 | GET    | `/api/info`   | API metadata and dataset information |
+
+### Question Endpoints
+
+| Method | Endpoint                           | Description                                    |
+|--------|------------------------------------|------------------------------------------------|
+| GET    | `/api/questions/`                  | Get all questions (paginated)                  |
+| GET    | `/api/questions/{id}`              | Get specific question by ID                    |
+| GET    | `/api/questions/random`            | Get random questions                           |
+| GET    | `/api/questions/category/{name}`   | Filter questions by category                   |
+| GET    | `/api/questions/difficulty/{level}`| Filter questions by difficulty (Easy/Medium/Hard)|
+| GET    | `/api/questions/search`            | Search questions by keyword                    |
+| GET    | `/api/questions/categories`        | Get list of all categories                     |
+| GET    | `/api/questions/difficulties`      | Get list of all difficulty levels              |
+| POST   | `/api/questions/answer`            | Validate answer and get feedback               |
 
 ### Documentation
 
@@ -127,41 +150,69 @@ The API will be available at: **http://localhost:8000**
 | `/docs`    | Interactive Swagger UI         |
 | `/redoc`   | Alternative ReDoc documentation|
 
-### Example Responses
+### Example API Usage
 
-**Health Check (`/health`):**
+#### 1. Get Random Questions
+```bash
+GET /api/questions/random?count=5
+```
+```json
+[
+  {
+    "id": 42,
+    "question": "When was the German-Douala Treaty signed?",
+    "options": {"A": "12 June 1884", "B": "12 July 1884", "C": "...", "D": "..."},
+    "answer": "B",
+    "category": "Colonial History",
+    "difficulty": "Easy",
+    "explanation": "The treaty was signed on July 12, 1884...",
+    "quality_score": 1.0,
+    "source_topic": "history"
+  }
+]
+```
+
+#### 2. Filter by Category
+```bash
+GET /api/questions/category/Geography?limit=10
+```
+Returns up to 10 questions from the Geography category.
+
+#### 3. Search Questions
+```bash
+GET /api/questions/search?q=Cameroon&limit=5
+```
+Returns up to 5 questions containing "Cameroon" in the question text.
+
+#### 4. Validate Answer
+```bash
+POST /api/questions/answer
+Content-Type: application/json
+
+{
+  "question_id": 42,
+  "selected_answer": "B"
+}
+```
+**Response:**
 ```json
 {
-  "status": "ok",
-  "app": "QuizForge API",
-  "version": "1.0.0",
-  "data_loaded": true
+  "question_id": 42,
+  "correct": true,
+  "correct_answer": "B",
+  "selected_answer": "B",
+  "explanation": "The German-Douala Treaty was signed on July 12, 1884..."
 }
 ```
 
-**API Info (`/api/info`):**
+#### 5. Get Categories List
+```bash
+GET /api/questions/categories
+```
 ```json
 {
-  "app_name": "QuizForge API",
-  "version": "1.0.0",
-  "total_questions": 99,
-  "data_path": "docs/questions.json",
-  "categories": [
-    "African Ethnography",
-    "African Geography",
-    "African History",
-    "Ancient History",
-    ...
-  ],
-  "difficulty_levels": [
-    "Easy",
-    "Hard",
-    "Medium"
-  ],
-  "endpoints": {
-    "health": "/health",
-    "api_info": "/api/info"
-  }
+  "count": 48,
+  "categories": ["African Ethnography", "African Geography", "Ancient History", ...]
 }
 ```
 
@@ -179,17 +230,23 @@ pytest
 pytest -v
 
 # Run specific test file
-pytest tests/test_setup.py -v
+pytest tests/test_questions.py -v
 
 # Run with coverage report
 pytest --cov=src tests/
 ```
 
-**Test Coverage:**
-- ✅ System endpoint functionality
+**Test Coverage (41 Tests):**
+- ✅ System endpoints (health, info, root)
 - ✅ Dataset loading and validation
+- ✅ Random question generation
+- ✅ Category filtering (case-insensitive)
+- ✅ Difficulty filtering
+- ✅ Search functionality with filters
+- ✅ Answer validation (correct/incorrect)
+- ✅ Pagination
+- ✅ Error handling (404, 422, 400)
 - ✅ API documentation accessibility
-- ✅ Data structure validation
 
 ---
 
@@ -302,16 +359,20 @@ Interactive documentation allows you to:
 
 ## 🔮 Future Enhancements
 
-Phase 2+ planned features:
-- Question filtering by category/difficulty
-- Random question selection
-- User authentication
+Phase 3+ planned features:
+- ✅ ~~Question filtering by category/difficulty~~ (Phase 2 Complete)
+- ✅ ~~Random question selection~~ (Phase 2 Complete)
+- ✅ ~~Answer validation~~ (Phase 2 Complete)
+- User authentication & authorization
 - Quiz session management
-- Score tracking
+- Score tracking & leaderboards
+- User progress analytics
 - Database integration (PostgreSQL)
 - Caching layer (Redis)
 - Rate limiting
 - Admin dashboard
+- Question contribution system
+- Multi-language support
 
 ---
 
@@ -357,5 +418,25 @@ For questions or issues:
 
 **Version:** 1.0.0  
 **Last Updated:** October 2025  
-**Status:** Phase 1 - Foundation Complete ✅
+**Status:** Phase 2 - Core Endpoints Complete ✅
+
+---
+
+## 📋 API Query Parameters
+
+### Random Questions
+- `count` (int, 1-100): Number of questions to return (default: 10)
+
+### Category/Difficulty Filters
+- `limit` (int, 1-100): Maximum questions to return (default: 20)
+
+### Search
+- `q` (string, min 2 chars): Search query
+- `limit` (int, 1-100): Maximum results (default: 20)
+- `category` (string, optional): Filter by category
+- `difficulty` (string, optional): Filter by difficulty
+
+### Pagination (All Questions)
+- `page` (int, ≥1): Page number (default: 1)
+- `limit` (int, 1-100): Items per page (default: 20)
 

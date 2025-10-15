@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.routes import base
+from src.routes import base, questions
 from src.core.config import settings
 
 # Initialize FastAPI application
@@ -25,6 +25,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(base.router)
+app.include_router(questions.router)
 
 
 @app.get("/", tags=["Root"])

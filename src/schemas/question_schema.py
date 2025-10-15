@@ -1,6 +1,6 @@
 """Pydantic models for question data validation."""
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Dict
 
 
@@ -20,6 +20,7 @@ class Question(BaseModel):
     This schema validates the structure of questions loaded from the dataset.
     """
     
+    id: int = Field(..., description="Unique question ID", ge=0)
     question: str = Field(..., description="The question text")
     options: QuestionOptions = Field(..., description="Answer options A-D")
     answer: str = Field(..., description="Correct answer (A, B, C, or D)")
@@ -29,10 +30,10 @@ class Question(BaseModel):
     quality_score: float = Field(..., ge=0.0, le=1.0, description="Quality score (0-1)")
     source_topic: str = Field(..., description="Original source topic")
     
-    class Config:
-        """Pydantic configuration."""
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
+                "id": 1,
                 "question": "What is the capital of France?",
                 "options": {
                     "A": "London",
@@ -48,4 +49,5 @@ class Question(BaseModel):
                 "source_topic": "geography"
             }
         }
+    )
 

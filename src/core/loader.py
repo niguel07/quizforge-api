@@ -11,7 +11,7 @@ def load_questions() -> List[Dict[str, Any]]:
     Load questions from the JSON dataset.
     
     Returns:
-        List of question dictionaries.
+        List of question dictionaries with added IDs.
         
     Raises:
         FileNotFoundError: If the dataset file doesn't exist.
@@ -37,6 +37,11 @@ def load_questions() -> List[Dict[str, Any]]:
     
     if not isinstance(data, list):
         raise ValueError("Dataset must be a JSON array of questions")
+    
+    # Add sequential IDs to questions if not present
+    for index, question in enumerate(data):
+        if "id" not in question:
+            question["id"] = index
     
     print(f"✅ Loaded {len(data)} questions from {path}")
     return data
